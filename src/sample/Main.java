@@ -21,8 +21,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Clean Water Mapping");
-
-        //Test test
+        
         Text welcome = new Text("Welcome!");
         welcome.setFont(new Font(24));
         welcome.setTextAlignment(TextAlignment.CENTER);

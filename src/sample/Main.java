@@ -49,12 +49,12 @@ public class Main extends Application {
 //        VBox rightPanel = new VBox();
 //        rightPanel.getChildren().add(register);
 
-        //gp.setPadding(new Insets(30, 185, 30, 185));
+//        gp.setPadding(new Insets(30, 185, 30, 185));
         gp.add(makePretty, 1, 0);
         gp.add(buttons, 1, 1);
 
 
-        //primaryStage.setScene(new Scene(root, 300, 275));
+//        primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.setScene(new Scene(gp, gp.getWidth(), gp.getHeight()));
         primaryStage.show();
     }

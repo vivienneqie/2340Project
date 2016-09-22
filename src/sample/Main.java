@@ -13,6 +13,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main extends Application {
 
@@ -105,14 +106,30 @@ public class Main extends Application {
         }
 
         //Screen for authenticated user
+        Text appTitle = new Text("Clean Water Crowdsourcing");
+        appTitle.setTextAlignment(TextAlignment.CENTER);
+        appTitle.setFont(new Font(24));
         Button logout = new Button("Logout");
-        loggedinPane.add(logout, 0, 0);
+        logout.setOnAction(e-> {
+            primaryStage.setScene(loginScreen);
+            userTF.clear();
+            passF.clear();
+        });
+        loggedinPane.add(appTitle, 1, 0);
+        loggedinPane.add(logout, 2, 3);
+        for (int i = 0; i <= 4; i++) {
+            RowConstraints row = new RowConstraints();
+            ColumnConstraints col = new ColumnConstraints();
+            row.setPrefHeight(50);
+            col.setPrefWidth(50);
+            loggedinPane.getRowConstraints().add(row);
+            loggedinPane.getColumnConstraints().add(col);
+        }
 
         //User credential data
-        HashMap<String, String> users = new HashMap<String, String>();
+        Map<String, String> users = new HashMap<>();
         //Hardcoded username and password for M4 checkpoint
         users.put("user", "pass");
-
         letMeIn.setOnAction(e-> {
             String checkUser = userTF.getText();
             String checkPW = passF.getText();

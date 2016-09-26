@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.Objects;
+
 public class User {
     private String username;
     private String password;
@@ -34,6 +36,24 @@ public class User {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         title = "User";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return Objects.equals(username, user.username)
+                && Objects.equals(password, user.password)
+                && Objects.equals(email, user.email)
+                && Objects.equals(firstName, user.firstName)
+                && Objects.equals(lastName, user.lastName)
+                && Objects.equals(phoneNumber, user.phoneNumber)
+                && Objects.equals(title, user.title);
     }
 
     /**

@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.Objects;
+
 public class Administrator {
     private String username;
     private String password;
@@ -26,7 +28,8 @@ public class Administrator {
      * @param phoneNumber Admin's phone number
      */
     public Administrator(String username, String password, String email,
-                         String firstName, String lastName, String phoneNumber) {
+                         String firstName, String lastName,
+                         String phoneNumber) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -34,6 +37,24 @@ public class Administrator {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         title = "Administrator";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Administrator that = (Administrator) o;
+        return Objects.equals(username, that.username)
+                && Objects.equals(password, that.password)
+                && Objects.equals(email, that.email)
+                && Objects.equals(firstName, that.firstName)
+                && Objects.equals(lastName, that.lastName)
+                && Objects.equals(phoneNumber, that.phoneNumber)
+                && Objects.equals(title, that.title);
     }
 
     /**

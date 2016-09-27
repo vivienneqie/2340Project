@@ -25,16 +25,14 @@ public class Worker {
      * @param email Worker's email address
      * @param firstName Worker's first name
      * @param lastName Worker's last name
-     * @param phoneNumber Worker's phone number
      */
     public Worker(String username, String password, String email,
-                  String firstName, String lastName, String phoneNumber) {
+                  String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         title = "Worker";
     }
 
@@ -48,12 +46,12 @@ public class Worker {
         }
         Worker worker = (Worker) o;
         return Objects.equals(username, worker.username)
-                && Objects.equals(password, worker.password)
-                && Objects.equals(email, worker.email)
-                && Objects.equals(firstName, worker.firstName)
-                && Objects.equals(lastName, worker.lastName)
-                && Objects.equals(phoneNumber, worker.phoneNumber)
-                && Objects.equals(title, worker.title);
+                && Objects.equals(email, worker.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, email);
     }
 
     /**

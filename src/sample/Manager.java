@@ -25,16 +25,14 @@ public class Manager {
      * @param email Manager's email address
      * @param firstName Manager's first name
      * @param lastName Manager's last name
-     * @param phoneNumber Manager's phone number
      */
     public Manager(String username, String password, String email,
-                   String firstName, String lastName, String phoneNumber) {
+                   String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         title = "Manager";
     }
 
@@ -48,12 +46,12 @@ public class Manager {
         }
         Manager manager = (Manager) o;
         return Objects.equals(username, manager.username)
-                && Objects.equals(password, manager.password)
-                && Objects.equals(email, manager.email)
-                && Objects.equals(firstName, manager.firstName)
-                && Objects.equals(lastName, manager.lastName)
-                && Objects.equals(phoneNumber, manager.phoneNumber)
-                && Objects.equals(title, manager.title);
+                && Objects.equals(email, manager.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, email);
     }
 
     /**

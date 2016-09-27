@@ -25,16 +25,14 @@ public class User {
      * @param email User's email address
      * @param firstName User's first name
      * @param lastName User's last name
-     * @param phoneNumber User's phone number
      */
     public User(String username, String password, String email,
-                String firstName, String lastName, String phoneNumber) {
+                String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         title = "User";
     }
 
@@ -48,12 +46,12 @@ public class User {
         }
         User user = (User) o;
         return Objects.equals(username, user.username)
-                && Objects.equals(password, user.password)
-                && Objects.equals(email, user.email)
-                && Objects.equals(firstName, user.firstName)
-                && Objects.equals(lastName, user.lastName)
-                && Objects.equals(phoneNumber, user.phoneNumber)
-                && Objects.equals(title, user.title);
+                && Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, email);
     }
 
     /**

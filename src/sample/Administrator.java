@@ -25,17 +25,14 @@ public class Administrator {
      * @param email Admin's email address
      * @param firstName Admin's first name
      * @param lastName Admin's last name
-     * @param phoneNumber Admin's phone number
      */
     public Administrator(String username, String password, String email,
-                         String firstName, String lastName,
-                         String phoneNumber) {
+                         String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         title = "Administrator";
     }
 
@@ -49,12 +46,12 @@ public class Administrator {
         }
         Administrator that = (Administrator) o;
         return Objects.equals(username, that.username)
-                && Objects.equals(password, that.password)
-                && Objects.equals(email, that.email)
-                && Objects.equals(firstName, that.firstName)
-                && Objects.equals(lastName, that.lastName)
-                && Objects.equals(phoneNumber, that.phoneNumber)
-                && Objects.equals(title, that.title);
+                && Objects.equals(email, that.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, email);
     }
 
     /**

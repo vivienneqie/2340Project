@@ -127,13 +127,14 @@ public class Main extends Application {
         }
 
         //User credential data
-        Map<String, String> users = new HashMap<>();
+        Map<String, User> users = new HashMap<>();
         //Hardcoded username and password for M4 checkpoint
-        users.put("user", "pass");
+        User harambe = new User("user", "pass", "dank@memes.com", "RIP", "Harambe");
+        users.put("user", harambe);
         letMeIn.setOnAction(e-> {
             String checkUser = userTF.getText();
             String checkPW = passF.getText();
-            if (users.get(checkUser) != null && checkPW.equals(users.get(checkUser))) {
+            if (users.get(checkUser) != null && checkPW.equals(users.get(checkUser).getPassword())) {
                 primaryStage.setScene(in);
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

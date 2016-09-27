@@ -10,6 +10,7 @@ public class Administrator {
     private String lastName;
     private String phoneNumber;
     private String title;
+    private String homeAddress;
 
     /**
      * Empty constructor with default title
@@ -156,5 +157,21 @@ public class Administrator {
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Getter function for home address
+     * @return String home address
+     */
+    public String getHomeAddress() {
+        return homeAddress;
+    }
+
+    /**
+     * Setter function for home address
+     * @param homeAddress Admin's home address
+     */
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
 }

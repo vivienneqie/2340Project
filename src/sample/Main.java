@@ -148,6 +148,8 @@ public class Main extends Application {
         registration.add(password, 2, 6);
         registration.add(new Text("Confirm password:"), 1, 7);
         registration.add(confirmPassword, 2, 7);
+
+
         //Screen for authenticated user
         Text appTitle = new Text("Clean Water Crowdsourcing");
         appTitle.setTextAlignment(TextAlignment.CENTER);

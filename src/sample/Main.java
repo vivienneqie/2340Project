@@ -48,10 +48,17 @@ public class Main extends Application {
             loggedinPane.getColumnConstraints().add(column);
         }
 
+        GridPane registration = new GridPane();
+        for (int i = 0; i < 3; i++) {
+            ColumnConstraints column = new ColumnConstraints(100);
+            registration.getColumnConstraints().add(column);
+        }
+
         //Scene home = new Scene(gp, gp.getWidth(), gp.getHeight());
         Scene home = new Scene(gp);
         Scene loginScreen = new Scene(loginPane);
         Scene in = new Scene(loggedinPane);
+        Scene registrationScreen = new Scene(registration);
 
         Button login = new Button("Login");
         login.setMaxWidth(120);
@@ -60,6 +67,9 @@ public class Main extends Application {
         });
         Button register = new Button("Register");
         register.setMaxWidth(120);
+        register.setOnAction( e-> {
+            primaryStage.setScene(registrationScreen);
+        });
 
         VBox buttons = new VBox();
         buttons.getChildren().add(login);
@@ -73,12 +83,12 @@ public class Main extends Application {
         gp.add(buttons, 1, 1);
 
         Text loginTitle = new Text("Login");
+        loginTitle.setFont(new Font(24));
+        loginTitle.setTextAlignment(TextAlignment.CENTER);
         Button goHome = new Button("Home");
         goHome.setOnAction(e-> {
             primaryStage.setScene(home);
         });
-        loginTitle.setFont(new Font(24));
-        loginTitle.setTextAlignment(TextAlignment.CENTER);
         Label label = new Label(" ");
         Pane space = new Pane();
         space.minHeightProperty().bind(label.heightProperty());
@@ -104,6 +114,26 @@ public class Main extends Application {
             loginPane.getRowConstraints().add(row);
             loginPane.getColumnConstraints().add(col);
         }
+
+        Text signUp = new Text("Sign Up");
+        signUp.setFont(new Font(24));
+        signUp.setTextAlignment(TextAlignment.CENTER);
+        Button homeButton = new Button("Home");
+        homeButton.setOnAction(e-> {
+            primaryStage.setScene(home);
+        });
+        Label label2 = new Label(" ");
+        Pane spacelol = new Pane();
+        spacelol.minHeightProperty().bind(label2.heightProperty());
+        Pane space2lol = new Pane();
+        space2lol.minHeightProperty().bind(label2.heightProperty());
+        registration.add(homeButton, 0, 0);
+        registration.add(signUp, 2, 0);
+        registration.add(spacelol, 1, 1);
+        TextField firstName = new TextField();
+        TextField lastName = new TextField();
+        registration.add(new Text("First name:"), 1, 2);
+
 
         //Screen for authenticated user
         Text appTitle = new Text("Clean Water Crowdsourcing");

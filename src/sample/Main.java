@@ -132,9 +132,22 @@ public class Main extends Application {
         registration.add(spacelol, 1, 1);
         TextField firstName = new TextField();
         TextField lastName = new TextField();
+        TextField email = new TextField();
+        TextField username = new TextField();
+        PasswordField password = new PasswordField();
+        PasswordField confirmPassword = new PasswordField();
         registration.add(new Text("First name:"), 1, 2);
-
-
+        registration.add(firstName, 2, 2);
+        registration.add(new Text("Last name:"), 1, 3);
+        registration.add(lastName, 2, 3);
+        registration.add(new Text("Email address:"), 1, 4);
+        registration.add(email, 2, 4);
+        registration.add(new Text("Username:"), 1, 5);
+        registration.add(username, 2, 5);
+        registration.add(new Text("Password:"), 1, 6);
+        registration.add(password, 2, 6);
+        registration.add(new Text("Confirm password:"), 1, 7);
+        registration.add(confirmPassword, 2, 7);
         //Screen for authenticated user
         Text appTitle = new Text("Clean Water Crowdsourcing");
         appTitle.setTextAlignment(TextAlignment.CENTER);

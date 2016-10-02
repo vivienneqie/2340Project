@@ -29,10 +29,11 @@ public class MainFXApp extends Application {
 
             // Give the controller access to the main app.
             WelcomeController controller = loader.getController();
+            controller.setDialogStage(mainScreen);
             controller.setMainApp(this);
 
             // Set the MainFXApp App title
-            mainScreen.setTitle("Course Registration");
+            mainScreen.setTitle("Welcome");
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
@@ -59,7 +60,7 @@ public class MainFXApp extends Application {
             LoginController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
-            dialogStage.showAndWait();
+            dialogStage.show();
         } catch (IOException e) {
             System.out.println("error");
         }
@@ -72,14 +73,14 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("LOGIN");
+            dialogStage.setTitle("Home");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             HomeController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
-            dialogStage.showAndWait();
+            dialogStage.show();
         } catch (IOException e) {
             System.out.println("error");
         }
@@ -99,7 +100,7 @@ public class MainFXApp extends Application {
             RegisterController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
-            dialogStage.showAndWait();
+            dialogStage.show();
         } catch (IOException e) {
             System.out.println("error");
         }

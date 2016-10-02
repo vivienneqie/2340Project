@@ -1,34 +1,30 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class WelcomeController {
 
     private MainFXApp mainFXApplication;
 
+    private Stage _dialogStage;
 
     public void setMainApp(MainFXApp mainFXApp) {
         mainFXApplication = mainFXApp;}
 
-    @FXML
-    public Button login;
-
-    @FXML
-    public Button register;
+    public void setDialogStage(Stage dialogStage) {
+        _dialogStage = dialogStage;
+    }
 
     @FXML
     public void onRegPressed() {
-        Stage stage = (Stage) register.getScene().getWindow(); //cast as Stage
-        stage.close(); //close welcome screen
+        _dialogStage.close();
         mainFXApplication.goToRegistration();
     }
 
     @FXML
     public void onLoginPressed() {
-        Stage stage = (Stage) login.getScene().getWindow(); //cast as Stage
-        stage.close(); //close welcome screen
+        _dialogStage.close();
         mainFXApplication.goToLogin();
     }
 }

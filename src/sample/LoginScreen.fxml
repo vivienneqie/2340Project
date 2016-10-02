@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="216.0" prefWidth="333.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="216.0" prefWidth="333.0" xmlns="http://javafx.com/javafx/8.0.102-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -33,7 +33,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleOKPressed" prefWidth="75.0" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="login" cancelButton="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleOKPressed" prefWidth="75.0" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <TextField fx:id="unText" maxWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <PasswordField fx:id="pwText" maxWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />

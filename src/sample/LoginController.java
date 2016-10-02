@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -42,20 +43,16 @@ public class LoginController {
         if (isInputValid()) {
             //if the data is reasonable, then remember the the student data in the window
             System.out.println("authenticated");
-            mainFXAppApplication.goToHome();
             //signal success and close this dialog window.
             _okClicked = true;
             _dialogStage.close();
-
+            mainFXAppApplication.goToHome();
         } else {
             System.out.println(unText.getText());
         }
     }
 
     private boolean isInputValid() {
-        if (unText.getText().equals("user") && pwText.getText().equals("pass")) {
-            return true;
-        }
-        return false;
+        return unText.getText().equals("user") && pwText.getText().equals("pass");
     }
 }

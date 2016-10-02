@@ -18,6 +18,7 @@ public class HomeController {
     }
 
     public void handleLogout() {
-        System.exit(0);
+        _dialogStage.close();
+        mainFXAppApplication.goToLogin();
     }
 }

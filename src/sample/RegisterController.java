@@ -3,14 +3,25 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Created by Mitchell on 10/1/2016.
  */
 public class RegisterController {
+    @FXML
+    private BorderPane regPane;
+
     @FXML
     private TextField unText;
 
@@ -22,6 +33,9 @@ public class RegisterController {
 
     @FXML
     private ComboBox accBox;
+
+    @FXML
+    private Button register;
 
     private Stage _dialogStage;
 
@@ -46,7 +60,21 @@ public class RegisterController {
     @FXML
     private void handleRegister() {
         Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
-        System.out.println(newUser.getName());
+        register.setOnAction(e -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
+            try {
+                Parent root = (Parent) loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ie) {
+                ie.printStackTrace();
+            }
+        });
+
+//        stage.setScene(loginScreen);
+
     }
 
     @FXML

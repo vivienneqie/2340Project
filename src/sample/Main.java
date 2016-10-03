@@ -67,7 +67,7 @@ public class Main extends Application {
         });
         Button register = new Button("Register");
         register.setMaxWidth(120);
-        register.setOnAction( e-> {
+        register.setOnAction(e-> {
             primaryStage.setScene(registrationScreen);
         });
 

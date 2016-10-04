@@ -23,13 +23,22 @@ public class RegisterController {
     private BorderPane regPane;
 
     @FXML
-    private TextField unText;
-
-    @FXML
     private TextField fnText;
 
     @FXML
+    private TextField lnText;
+
+    @FXML
+    private TextField emailText;
+
+    @FXML
+    private TextField unText;
+
+    @FXML
     private TextField pwText;
+
+    @FXML
+    private TextField pwcText;
 
     @FXML
     private ComboBox accBox;
@@ -59,6 +68,8 @@ public class RegisterController {
 
     @FXML
     private void handleRegister() {
+        //_dialogStage.close()
+        //mainFXApplication.goToLogin();
         Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
         register.setOnAction(e -> {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
@@ -72,8 +83,6 @@ public class RegisterController {
                 ie.printStackTrace();
             }
         });
-
-//        stage.setScene(loginScreen);
 
     }
 

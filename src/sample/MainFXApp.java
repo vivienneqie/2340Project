@@ -20,6 +20,11 @@ public class MainFXApp extends Application {
         initRootLayout(mainScreen);
     }
 
+//    public void goHomeHome() {
+//        Scene homehome = new Scene(rootLayout);
+//        mainScreen.setScene(homehome);
+//    }
+
     private void initRootLayout(Stage mainScreen) {
         try {
             // Load root layout from fxml file.

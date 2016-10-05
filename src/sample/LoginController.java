@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
@@ -62,24 +63,18 @@ public class LoginController {
             _dialogStage.close();
             mainFXAppApplication.goToHome();
         } else {
-            System.out.println(userText.getText());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Invalid Login");
+            alert.setHeaderText("Username and/or Password Not Found");
+            alert.setContentText("Username and/or password was entered incorrectly.");
+            alert.showAndWait();
         }
     }
 
 //    @FXML
 //    private void handleCancel() {
-//        cancel.setOnAction(e -> {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeScreen.fxml"));
-//            try {
-//                Parent root = (Parent) loader.load();
-//                Scene scene = new Scene(root);
-//                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-//                stage.setScene(scene);
-//                stage.show();
-//            } catch (IOException ie) {
-//                ie.printStackTrace();
-//            }
-//        });
+//        _dialogStage.close();
+//        mainFXAppApplication.goHomeHome();
 //    }
 
     public BorderPane getLoginPane() {

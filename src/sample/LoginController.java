@@ -21,10 +21,10 @@ public class LoginController {
     private BorderPane loginPane;
 
     @FXML
-    private TextField unText;
+    private TextField userText;
 
     @FXML
-    private TextField pwText;
+    private TextField passText;
 
     @FXML
     private Button cancel;
@@ -62,7 +62,7 @@ public class LoginController {
             _dialogStage.close();
             mainFXAppApplication.goToHome();
         } else {
-            System.out.println(unText.getText());
+            System.out.println(userText.getText());
         }
     }
 
@@ -87,6 +87,6 @@ public class LoginController {
     }
 
     private boolean isInputValid() {
-        return unText.getText().equals("user") && pwText.getText().equals("pass");
+        return userText.getText().equals("user") && passText.getText().equals("pass");
     }
 }

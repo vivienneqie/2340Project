@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -68,27 +69,46 @@ public class RegisterController {
 
     @FXML
     private void handleRegister() {
-        //_dialogStage.close()
+        //_dialogStage.close();
         //mainFXApplication.goToLogin();
-        Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
+        //Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
         register.setOnAction(e -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
-            try {
-                Parent root = (Parent) loader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ie) {
-                ie.printStackTrace();
+            if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
+                    || pwText.getText().equals("") || pwcText.getText().equals("") || emailText.getText().equals("")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("One or more of the fields was not filled out correctly");
+                alert.setContentText("Please enter values for all of the required fields.");
+                alert.showAndWait();
+            } else {
+                if (pwText.getText().equals(pwcText.getText())) {
+                    User newUser = new User(unText.getText(), pwText.getText(),
+                            emailText.getText(), fnText.getText(), lnText.getText());
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
+                    try {
+                        Parent root = (Parent) loader.load();
+                        Scene scene = new Scene(root);
+                        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ie) {
+                        ie.printStackTrace();
+                    }
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Passwords do not match");
+                    alert.setContentText("Password confirmation is not identical to your password.");
+                    alert.showAndWait();
+                }
             }
         });
-
     }
 
     @FXML
     private void handleCancel() {
-        System.exit(0);
+        _dialogStage.close();
+        mainFXApplication.goToLogin();
     }
 
 }

@@ -201,6 +201,11 @@ public class User {
         return userDB;
     }
 
+    /**
+     *
+     * @param file The file that contains user data
+     * @throws FileNotFoundException
+     */
     public static void populateUserDB(File file) throws FileNotFoundException {
         Scanner scan = new Scanner(file);
         while (scan.hasNextLine()) {

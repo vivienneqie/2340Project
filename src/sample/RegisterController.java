@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.util.Map;
 
 
 /**
@@ -77,7 +77,7 @@ public class RegisterController {
     @FXML
     private void handleRegister() throws FileNotFoundException {
         //Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
-        register.setOnAction(e -> {
+        //register.setOnAction(e -> {
             if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
                     || pwText.getText().equals("") || pwcText.getText().equals("") || emailText.getText().equals("")) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -93,14 +93,15 @@ public class RegisterController {
                 alert.showAndWait();
             } else {
                 if (pwText.getText().equals(pwcText.getText())) {
+                    //Create a new user given input
                     User newUser = new User(unText.getText(), pwText.getText(),
                             emailText.getText(), fnText.getText(), lnText.getText());
                     newUser.addToDatabase(newUser.getUsername(), newUser);
-                    //Map<String, User> users = User.getUserDB();
                     gson = new Gson();
+                    String jsonString = gson.toJson(newUser);
                     try {
-                        String jsonString = gson.toJson(newUser);
-                        PrintWriter output = new PrintWriter(file);
+                        //Writes data to a .txt file
+                        PrintWriter output = new PrintWriter(new FileOutputStream(file, true));
                         output.println(newUser.getUsername() + "$" + jsonString);
                         output.flush();
                         output.close();
@@ -127,7 +128,7 @@ public class RegisterController {
                     alert.showAndWait();
                 }
             }
-        });
+        //});
     }
 
     @FXML

@@ -1,1 +1,3 @@
+ohshit${"username":"ohshit","password":"whaddup","email":"dat@boi.com","firstName":"Dat","lastName":"Boi","title":"User"}
 user${"username":"user","password":"pass","email":"rip@harambe.com","firstName":"RIP","lastName":"Harambe","title":"User"}
+dank${"username":"dank","password":"memes","email":"dank@memes.com","firstName":"Dank","lastName":"Memes","title":"User"}

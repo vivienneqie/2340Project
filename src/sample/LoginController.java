@@ -65,11 +65,11 @@ public class LoginController {
         }
     }
 
-//    @FXML
-//    private void handleCancel() {
-//        _dialogStage.close();
-//        mainFXAppApplication.goHomeHome();
-//    }
+    @FXML
+    private void handleCancel() {
+        _dialogStage.close();
+        mainFXAppApplication.goToWelcome();
+    }
 
     public BorderPane getLoginPane() {
         return loginPane;

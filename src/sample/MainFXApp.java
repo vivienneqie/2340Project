@@ -33,10 +33,25 @@ public class MainFXApp extends Application {
         initRootLayout(mainScreen);
     }
 
-//    public void goHomeHome() {
-//        Scene homehome = new Scene(rootLayout);
-//        mainScreen.setScene(homehome);
-//    }
+    public void goToWelcome() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("WelcomeScreen.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Welcome");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            WelcomeController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
 
     private void initRootLayout(Stage mainScreen) {
         try {
@@ -44,6 +59,7 @@ public class MainFXApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(sample.MainFXApp.class.getResource("WelcomeScreen.fxml"));
             rootLayout = loader.load();
+            Stage dialogStage = new Stage();
 
             // Give the controller access to the main app.
             WelcomeController controller = loader.getController();

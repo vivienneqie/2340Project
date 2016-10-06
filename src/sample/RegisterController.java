@@ -76,7 +76,6 @@ public class RegisterController {
 
     @FXML
     private void handleRegister() throws FileNotFoundException {
-        //Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
         //register.setOnAction(e -> {
             if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
                     || pwText.getText().equals("") || pwcText.getText().equals("") || emailText.getText().equals("")) {

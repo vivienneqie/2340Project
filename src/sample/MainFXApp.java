@@ -26,6 +26,7 @@ public class MainFXApp extends Application {
     public void start(Stage primaryStage) throws FileNotFoundException {
         File file = new File("users.txt");
         if (file.exists()) {
+            //Populates user database with all users who have registered before
             User.populateUserDB(file);
         }
         mainScreen = primaryStage;

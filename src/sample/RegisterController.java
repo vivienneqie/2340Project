@@ -2,11 +2,8 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -14,10 +11,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Map;
+
 
 /**
- * Created by Mitchell on 10/1/2016.
+ * @author Arshiya
+ * @author Brittany
+ * @author Mitchell
  */
 public class RegisterController {
     @FXML
@@ -47,6 +50,10 @@ public class RegisterController {
     @FXML
     private Button register;
 
+    private Gson gson;
+
+    private static File file = new File("users.txt");
+
     private Stage _dialogStage;
 
     /** flag to signal whether dialog was closed normally */
@@ -68,7 +75,7 @@ public class RegisterController {
     }
 
     @FXML
-    private void handleRegister() {
+    private void handleRegister() throws FileNotFoundException {
         //Actor newUser = new Actor(unText.getText(), pwText.getText(), fnText.getText(), (AccountTypes) accBox.getValue());
         register.setOnAction(e -> {
             if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
@@ -78,10 +85,28 @@ public class RegisterController {
                 alert.setHeaderText("One or more of the fields was not filled out correctly");
                 alert.setContentText("Please enter values for all of the required fields.");
                 alert.showAndWait();
+            } else if (unText.getText().contains("$")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Your username may not contain the $ sign.");
+                alert.setContentText("Please enter a different username.");
+                alert.showAndWait();
             } else {
                 if (pwText.getText().equals(pwcText.getText())) {
                     User newUser = new User(unText.getText(), pwText.getText(),
                             emailText.getText(), fnText.getText(), lnText.getText());
+                    newUser.addToDatabase(newUser.getUsername(), newUser);
+                    //Map<String, User> users = User.getUserDB();
+                    gson = new Gson();
+                    try {
+                        String jsonString = gson.toJson(newUser);
+                        PrintWriter output = new PrintWriter(file);
+                        output.println(newUser.getUsername() + "$" + jsonString);
+                        output.flush();
+                        output.close();
+                    } catch (FileNotFoundException fnfe) {
+                        fnfe.printStackTrace();
+                    }
                     _dialogStage.close();
                     mainFXApplication.goToLogin();
 //                    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));

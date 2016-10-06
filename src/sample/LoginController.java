@@ -8,14 +8,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.util.Map;
 
 /**
- * Created by Mitchell on 9/28/2016.
+ * @author Brittany
+ * @author Mitchell
  */
 public class LoginController {
     @FXML
@@ -82,6 +82,12 @@ public class LoginController {
     }
 
     private boolean isInputValid() {
-        return userText.getText().equals("user") && passText.getText().equals("pass");
+        Map<String, User> users = User.getUserDB();
+        if (users.get(userText.getText()) != null) {
+            User theUser = users.get(userText.getText());
+            return passText.getText().equals(theUser.getPassword());
+        }
+        return false;
+        //return userText.getText().equals("user") && passText.getText().equals("pass");
     }
 }

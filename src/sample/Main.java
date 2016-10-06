@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Brittany
+ */
 public class Main extends Application {
 
     @Override

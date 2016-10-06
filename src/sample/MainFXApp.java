@@ -6,8 +6,16 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * @author Arshiya
+ * @author Brittany
+ * @author Mitchell
+ * @author Vivienne
+ */
 public class MainFXApp extends Application {
 
     private BorderPane rootLayout;
@@ -15,7 +23,11 @@ public class MainFXApp extends Application {
     private Stage mainScreen;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
+        File file = new File("users.txt");
+        if (file.exists()) {
+            User.populateUserDB(file);
+        }
         mainScreen = primaryStage;
         initRootLayout(mainScreen);
     }

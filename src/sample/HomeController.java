@@ -3,7 +3,7 @@ package sample;
 import javafx.stage.Stage;
 
 /**
- * Created by Mitchell on 9/28/2016.
+ * @author Mitchell
  */
 public class HomeController {
     private MainFXApp mainFXAppApplication;

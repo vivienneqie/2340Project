@@ -1,7 +1,15 @@
 package sample;
 
-import java.util.Objects;
+import com.google.gson.Gson;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+/**
+ * @author Brittany
+ * @author Vivienne
+ */
 public class User {
     private String username;
     private String password;
@@ -11,6 +19,7 @@ public class User {
     private String phoneNumber;
     private String title;
     private String homeAddress;
+    private static Map<String, User> userDB = new HashMap<>();
 
     /**
      * Empty constructor with default title
@@ -174,4 +183,38 @@ public class User {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
+
+    /**
+     *
+     * @param un User's username
+     * @param user The User
+     */
+    public static void addToDatabase(String un, User user) {
+        userDB.put(un, user);
+    }
+
+    /**
+     * Getter function for the database of users
+     * @return
+     */
+    public static Map<String, User> getUserDB() {
+        return userDB;
+    }
+
+    public static void populateUserDB(File file) throws FileNotFoundException {
+        Scanner scan = new Scanner(file);
+        while (scan.hasNextLine()) {
+            String line = scan.nextLine();
+            if (line.contains("$")) {
+                StringTokenizer token = new StringTokenizer(line, "$");
+                String un = token.nextToken();
+                String json = token.nextToken();
+                Gson gson = new Gson();
+                User u = gson.fromJson(json, User.class);
+                userDB.put(un, u);
+            }
+        }
+        scan.close();
+    }
+
 }

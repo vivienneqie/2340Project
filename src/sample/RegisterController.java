@@ -76,7 +76,56 @@ public class RegisterController {
 
     @FXML
     private void handleRegister() throws FileNotFoundException {
-        
+        if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
+                || pwText.getText().equals("") || pwcText.getText().equals("") || emailText.getText().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("One or more of the fields was not filled out correctly");
+            alert.setContentText("Please enter values for all of the required fields.");
+            alert.showAndWait();
+        } else if (unText.getText().contains("$")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Your username may not contain the $ sign.");
+            alert.setContentText("Please enter a different username.");
+            alert.showAndWait();
+        } else {
+            if (pwText.getText().equals(pwcText.getText())) {
+                //Create a new user given input
+                User newUser = new User(unText.getText(), pwText.getText(),
+                        emailText.getText(), fnText.getText(), lnText.getText());
+                newUser.addToDatabase(newUser.getUsername(), newUser);
+                gson = new Gson();
+                String jsonString = gson.toJson(newUser);
+                try {
+                    //Writes data to a .txt file
+                    PrintWriter output = new PrintWriter(new FileOutputStream(file, true));
+                    output.println(newUser.getUsername() + "$" + jsonString);
+                    output.flush();
+                    output.close();
+                } catch (FileNotFoundException fnfe) {
+                    fnfe.printStackTrace();
+                }
+                _dialogStage.close();
+                mainFXApplication.goToLogin();
+//                    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
+//                    try {
+//                        Parent root = (Parent) loader.load();
+//                        Scene scene = new Scene(root);
+//                        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+//                        stage.setScene(scene);
+//                        stage.show();
+//                    } catch (IOException ie) {
+//                        ie.printStackTrace();
+//                    }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Passwords do not match");
+                alert.setContentText("Password confirmation is not identical to your password.");
+                alert.showAndWait();
+            }
+        }
     }
 
     @FXML

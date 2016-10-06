@@ -76,12 +76,12 @@ public class LoginController {
     }
 
     private boolean isInputValid() {
+        //Mapped by username and user for easy search by username
         Map<String, User> users = User.getUserDB();
         if (users.get(userText.getText()) != null) {
             User theUser = users.get(userText.getText());
             return passText.getText().equals(theUser.getPassword());
         }
         return false;
-        //return userText.getText().equals("user") && passText.getText().equals("pass");
     }
 }

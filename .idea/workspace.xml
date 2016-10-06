@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb2edcd7-fade-46ef-9bd5-8293ac1f8700" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/LoginController.java" afterPath="$PROJECT_DIR$/src/sample/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/RegisterController.java" afterPath="$PROJECT_DIR$/src/sample/RegisterController.java" />
     </list>
     <ignored path="2340Project.iws" />
@@ -26,18 +27,18 @@
       <file leaf-file-name="MainFXApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/MainFXApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
+            <state relative-caret-position="780">
               <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+            <state relative-caret-position="313">
+              <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +59,7 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
+            <state relative-caret-position="2385">
               <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+            <state relative-caret-position="568">
+              <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,10 +110,10 @@
         <option value="$PROJECT_DIR$/src/sample/LoginScreen.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/sample/LoginController.java" />
         <option value="$PROJECT_DIR$/src/sample/User.java" />
         <option value="$PROJECT_DIR$/src/sample/MainFXApp.java" />
         <option value="$PROJECT_DIR$/src/sample/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/sample/LoginController.java" />
       </list>
     </option>
   </component>
@@ -853,6 +854,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/MainFXApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/LoginScreen.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -866,36 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/MainFXApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        <state relative-caret-position="568">
+          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

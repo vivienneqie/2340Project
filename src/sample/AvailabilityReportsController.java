@@ -43,8 +43,8 @@ public class AvailabilityReportsController {
     }
 
     @FXML
-    private void handleReportButton() {
+    private void handleHomeButton() {
         _dialogStage.close();
-        mainFXApplication.goToSubmission();
+        mainFXApplication.goToHome();
     }
 }

@@ -1,3 +1,6 @@
 ohshit${"username":"ohshit","password":"whaddup","email":"dat@boi.com","firstName":"Dat","lastName":"Boi","title":"User"}
 user${"username":"user","password":"pass","email":"rip@harambe.com","firstName":"RIP","lastName":"Harambe","title":"User"}
 dank${"username":"dank","password":"memes","email":"dank@memes.com","firstName":"Dank","lastName":"Memes","title":"User"}
+deandra${"username":"deandra","password":"smellmypoopbitches","email":"deandra@themostpopulargirlinschool.com","firstName":"Deandra","lastName":"??? who cares","title":"User"}
+as1216${"username":"as1216","password":"pass","email":"arshiya.singh16@gmail.com","firstName":"Arshiya","lastName":"Singh","title":"User"}
+dankmemes${"username":"dankmemes","password":"maneater12","email":"dankmemes@poop.com","firstName":"Dank","lastName":"Memes","title":"User"}

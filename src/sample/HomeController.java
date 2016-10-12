@@ -1,12 +1,19 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
  * @author Mitchell
  */
 public class HomeController {
+    @FXML
+    private Button reportButton;
+
+    @FXML
+    private Button viewReports;
+
     private MainFXApp mainFXAppApplication;
 
     private Stage _dialogStage;
@@ -22,5 +29,17 @@ public class HomeController {
     public void handleLogout() {
         _dialogStage.close();
         mainFXAppApplication.goToLogin();
+    }
+
+    @FXML
+    private void handleReportButton() {
+        _dialogStage.close();
+        mainFXAppApplication.goToSubmission();
+    }
+
+    @FXML
+    private void handleViewSubmission() {
+        _dialogStage.close();
+        mainFXAppApplication.goToReports();
     }
 }

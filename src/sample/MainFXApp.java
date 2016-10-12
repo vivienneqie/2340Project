@@ -151,7 +151,7 @@ public class MainFXApp extends Application {
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-            RegisterController controller = loader.getController();
+            AvailabilitySubmissionForm controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
             dialogStage.show();
@@ -171,7 +171,7 @@ public class MainFXApp extends Application {
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-            RegisterController controller = loader.getController();
+            AvailabilityReportsController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
             dialogStage.show();

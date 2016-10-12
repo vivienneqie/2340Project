@@ -140,6 +140,26 @@ public class MainFXApp extends Application {
         }
     }
 
+    public void goToSubmission() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("AvailabilitySubmissionForm.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Submit Here!");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            RegisterController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

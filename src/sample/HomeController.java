@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
 /**
@@ -17,6 +18,7 @@ public class HomeController {
         _dialogStage = dialogStage;
     }
 
+    @FXML
     public void handleLogout() {
         _dialogStage.close();
         mainFXAppApplication.goToLogin();

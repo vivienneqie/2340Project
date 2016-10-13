@@ -2,7 +2,9 @@ package sample;
 
 import java.util.Objects;
 
-public class Administrator {
+import static sample.AccountTypes.admin;
+
+public class Administrator extends User {
     private String username;
     private String password;
     private String email;
@@ -11,12 +13,14 @@ public class Administrator {
     private String phoneNumber;
     private String title;
     private String homeAddress;
+    private AccountTypes accType;
 
     /**
      * Empty constructor with default title
      */
     public Administrator() {
         title = "Administrator";
+        accType = admin;
     }
 
     /**
@@ -29,12 +33,13 @@ public class Administrator {
      */
     public Administrator(String username, String password, String email,
                          String firstName, String lastName) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        title = "Administrator";
+        super(username, password, email, firstName, lastName, admin);
+//        this.username = username;
+//        this.password = password;
+//        this.email = email;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        title = "Administrator";
     }
 
     @Override

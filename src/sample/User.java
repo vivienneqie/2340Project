@@ -6,9 +6,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import static sample.AccountTypes.user;
+
 /**
  * @author Brittany
  * @author Vivienne
+ * @author Arshiya
  */
 public class User {
     private String username;
@@ -19,6 +22,7 @@ public class User {
     private String phoneNumber;
     private String title;
     private String homeAddress;
+    private AccountTypes accType;
     private static Map<String, User> userDB = new HashMap<>();
 
     /**
@@ -26,6 +30,7 @@ public class User {
      */
     public User() {
         title = "User";
+        accType = user;
     }
 
     /**
@@ -37,12 +42,13 @@ public class User {
      * @param lastName User's last name
      */
     public User(String username, String password, String email,
-                String firstName, String lastName) {
+                String firstName, String lastName, AccountTypes accType) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accType = accType;
         title = "User";
     }
 

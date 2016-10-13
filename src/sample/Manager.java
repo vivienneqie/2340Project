@@ -2,7 +2,9 @@ package sample;
 
 import java.util.Objects;
 
-public class Manager {
+import static sample.AccountTypes.manager;
+
+public class Manager extends User {
     private String username;
     private String password;
     private String email;
@@ -11,12 +13,14 @@ public class Manager {
     private String phoneNumber;
     private String title;
     private String homeAddress;
+    private AccountTypes accType;
 
     /**
      * Empty constructor with default title
      */
     public Manager() {
         title = "Manager";
+        accType = manager;
     }
 
     /**
@@ -29,11 +33,12 @@ public class Manager {
      */
     public Manager(String username, String password, String email,
                    String firstName, String lastName) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(username, password, email, firstName, lastName, manager);
+//        this.username = username;
+//        this.password = password;
+//        this.email = email;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
         title = "Manager";
     }
 

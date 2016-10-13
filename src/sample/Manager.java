@@ -2,7 +2,7 @@ package sample;
 
 import java.util.Objects;
 
-import static sample.AccountTypes.manager;
+import static sample.AccountTypes.MANAGER;
 
 public class Manager extends User {
     private String username;
@@ -20,7 +20,7 @@ public class Manager extends User {
      */
     public Manager() {
         title = "Manager";
-        accType = manager;
+        accType = MANAGER;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Manager extends User {
      */
     public Manager(String username, String password, String email,
                    String firstName, String lastName) {
-        super(username, password, email, firstName, lastName, manager);
+        super(username, password, email, firstName, lastName, MANAGER);
 //        this.username = username;
 //        this.password = password;
 //        this.email = email;

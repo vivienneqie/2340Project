@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -86,14 +83,34 @@ public class RegisterController {
         } else if (unText.getText().contains("$")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Your username may not contain the $ sign.");
+            alert.setHeaderText("Your username may not contain the $ symbol.");
             alert.setContentText("Please enter a different username.");
+            alert.showAndWait();
+        } else if (pwcText.getText().contains("$")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Your password may not contain the $ symbol.");
+            alert.setContentText("Please select a different password.");
             alert.showAndWait();
         } else {
             if (pwText.getText().equals(pwcText.getText())) {
                 //Create a new user given input
+                String accType = accBox.getSelectionModel().getSelectedItem().toString();
+                AccountTypes accountType;
+                switch (accType) {
+                    case "USER": accountType = AccountTypes.USER;
+                        break;
+                    case "ADMIN": accountType = AccountTypes.ADMIN;
+                        break;
+                    case "WORKER": accountType = AccountTypes.WORKER;
+                        break;
+                    case "MANAGER": accountType = AccountTypes.MANAGER;
+                        break;
+                    default: accountType = null;
+                        break;
+                }
                 User newUser = new User(unText.getText(), pwText.getText(),
-                        emailText.getText(), fnText.getText(), lnText.getText());
+                        emailText.getText(), fnText.getText(), lnText.getText(), accountType);
                 newUser.addToDatabase(newUser.getUsername(), newUser);
                 gson = new Gson();
                 String jsonString = gson.toJson(newUser);

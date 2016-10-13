@@ -177,7 +177,7 @@ public class Main extends Application {
         //User credential data
         Map<String, User> users = new HashMap<>();
         //Hardcoded username and password for M4 checkpoint
-        User harambe = new User("user", "pass", "dank@memes.com", "RIP", "Harambe");
+        User harambe = new User("user", "pass", "dank@memes.com", "RIP", "Harambe", AccountTypes.ADMIN);
         users.put("user", harambe);
         letMeIn.setOnAction(e-> {
             String checkUser = userTF.getText();

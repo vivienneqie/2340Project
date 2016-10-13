@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-import static sample.AccountTypes.user;
+import static sample.AccountTypes.USER;
 
 /**
  * @author Brittany
@@ -30,7 +30,7 @@ public class User {
      */
     public User() {
         title = "User";
-        accType = user;
+        accType = USER;
     }
 
     /**

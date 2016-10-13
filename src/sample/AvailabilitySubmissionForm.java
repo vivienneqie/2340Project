@@ -46,12 +46,10 @@ public class AvailabilitySubmissionForm {
     private void initialize() {
         String[] waterTypes = {"Bottled", "Welled", "Steam", "Lake", "Spring", "Other"};
         ObservableList typeList = FXCollections.observableArrayList(waterTypes);
-        typeBox.getItems().clear();
         typeBox.setItems(typeList);
 
         String[] condTypes = {"Waste", "Treatable - Muddy", "Treatable - Clear", "Potable"};
         ObservableList condList = FXCollections.observableArrayList(condTypes);
-        condBox.getItems().clear();
         condBox.setItems(condList);
     }
 

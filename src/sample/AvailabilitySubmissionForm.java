@@ -56,11 +56,15 @@ public class AvailabilitySubmissionForm {
     @FXML
     private void handleSubmission() {
         //TODO: handle submission and verify fields here
+        String location = locationText.getText();
+        String waterType;
+        String conditionType;
     }
 
     @FXML
     private void handleCancelReport() {
         _dialogStage.close();
+        mainFXApplication.goToHome();
         //TODO:set where this goes after report is canceled
     }
 }

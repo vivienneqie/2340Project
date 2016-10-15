@@ -13,4 +13,12 @@ public class Report {
         this.waterType = waterType;
         this.conditionType = conditionType;
     }
+
+    public void updateWaterType(String waterType) {
+        this.waterType = waterType;
+    }
+
+    public void updateConditionType(String conditionType) {
+        this.conditionType = conditionType;
+    }
 }

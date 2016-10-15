@@ -57,14 +57,14 @@ public class AvailabilitySubmissionForm {
     private void handleSubmission() {
         //TODO: handle submission and verify fields here
         String location = locationText.getText();
-        String waterType;
-        String conditionType;
+        String waterType = typeBox.getSelectionModel().getSelectedItem().toString();
+        String conditionType = condBox.getSelectionModel().getSelectedItem().toString();
+        Report report = new Report(location, waterType, conditionType);
     }
 
     @FXML
     private void handleCancelReport() {
         _dialogStage.close();
         mainFXApplication.goToHome();
-        //TODO:set where this goes after report is canceled
     }
 }

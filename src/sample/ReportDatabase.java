@@ -25,10 +25,11 @@ public class ReportDatabase {
             try {
                 stmt = conn.createStatement();
                 String sql = "INSERT INTO AVAILABLE (ID,LOCATION,TYPE,CONDITION) " +
-                        "VALUES (" + r.getID() +", '"+ r.getLocation() + "', '"+ r.getType() + "' '"+ r.getCondition() + "');";
+                        "VALUES (" + r.getID() +", '"+ r.getLocation() + "', '"+ r.getType() + "', '"+ r.getCondition() + "');";
                 stmt.executeUpdate(sql);
                 stmt.close();
                 conn.close();
+                System.out.println("Added entry!");
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
@@ -42,6 +43,7 @@ public class ReportDatabase {
                 stmt.executeUpdate(sql);
                 stmt.close();
                 conn.close();
+                System.out.println("Updated water type with " + r.getType());
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
@@ -55,6 +57,7 @@ public class ReportDatabase {
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
+            System.out.println("Updated water condition with " + r.getType());
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);

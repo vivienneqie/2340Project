@@ -40,7 +40,8 @@ public class AvailabilityReportsController {
     @FXML
     private void initialize() {
         //TODO: setup reports here? Maybe make a separate class for a report...
-        //Location, type, condition
+        ReportDatabase rb = new ReportDatabase();
+        //fill TableView with data
     }
 
     @FXML

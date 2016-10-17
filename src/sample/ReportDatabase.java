@@ -63,23 +63,4 @@ public class ReportDatabase {
             System.exit(0);
         }
     }
-
-    public void displayAll() {
-        try {
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM AVAILABLE;" );
-            while ( rs.next() ) {
-                int id = rs.getInt("id");
-                String location = rs.getString("location");
-                String waterType  = rs.getString("type");
-                String condition = rs.getString("condition");
-            }
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        }
-    }
 }

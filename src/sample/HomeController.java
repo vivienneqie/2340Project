@@ -26,6 +26,12 @@ public class HomeController {
     }
 
     @FXML
+    private void initialize() {
+        //TODO:set up more buttons if the user logging in is a worker or manager
+
+    }
+
+    @FXML
     public void handleLogout() {
         _dialogStage.close();
         mainFXAppApplication.goToLogin();

@@ -11,7 +11,6 @@ public class Administrator extends User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private String title;
     private String homeAddress;
     private AccountTypes accType;
 
@@ -19,7 +18,6 @@ public class Administrator extends User {
      * Empty constructor with default title
      */
     public Administrator() {
-        title = "Administrator";
         accType = ADMIN;
     }
 
@@ -34,12 +32,6 @@ public class Administrator extends User {
     public Administrator(String username, String password, String email,
                          String firstName, String lastName) {
         super(username, password, email, firstName, lastName, ADMIN);
-//        this.username = username;
-//        this.password = password;
-//        this.email = email;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        title = "Administrator";
     }
 
     @Override
@@ -58,14 +50,6 @@ public class Administrator extends User {
     @Override
     public int hashCode() {
         return Objects.hash(username, email);
-    }
-
-    /**
-     * Getter function for Admin's title
-     * @return String title
-     */
-    public String getTitle() {
-        return title;
     }
 
     /**

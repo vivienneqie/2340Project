@@ -11,7 +11,6 @@ public class Manager extends User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private String title;
     private String homeAddress;
     private AccountTypes accType;
 
@@ -19,7 +18,6 @@ public class Manager extends User {
      * Empty constructor with default title
      */
     public Manager() {
-        title = "Manager";
         accType = MANAGER;
     }
 
@@ -34,12 +32,6 @@ public class Manager extends User {
     public Manager(String username, String password, String email,
                    String firstName, String lastName) {
         super(username, password, email, firstName, lastName, MANAGER);
-//        this.username = username;
-//        this.password = password;
-//        this.email = email;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-        title = "Manager";
     }
 
     @Override
@@ -58,14 +50,6 @@ public class Manager extends User {
     @Override
     public int hashCode() {
         return Objects.hash(username, email);
-    }
-
-    /**
-     * Getter function for Manager's title
-     * @return String title
-     */
-    public String getTitle() {
-        return title;
     }
 
     /**

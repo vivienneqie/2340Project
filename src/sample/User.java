@@ -20,7 +20,6 @@ public class User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private String title;
     private String homeAddress;
     private AccountTypes accType;
     private static Map<String, User> userDB = new HashMap<>();
@@ -29,7 +28,6 @@ public class User {
      * Empty constructor with default title
      */
     public User() {
-        title = "User";
         accType = USER;
     }
 
@@ -49,7 +47,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.accType = accType;
-        title = "User";
     }
 
     @Override
@@ -68,14 +65,6 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(username, email);
-    }
-
-    /**
-     * Getter function for User's title
-     * @return String title
-     */
-    public String getTitle() {
-        return title;
     }
 
     /**

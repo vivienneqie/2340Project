@@ -14,6 +14,9 @@ public class HomeController {
     @FXML
     private Button viewReports;
 
+    @FXML
+    private Button editProfile;
+
     private MainFXApp mainFXAppApplication;
 
     private Stage _dialogStage;
@@ -47,5 +50,11 @@ public class HomeController {
     private void handleViewSubmission() {
         _dialogStage.close();
         mainFXAppApplication.goToReports();
+    }
+
+    @FXML
+    private void handleEditProfile() {
+        _dialogStage.close();
+        mainFXAppApplication.goToEditProfile();
     }
 }

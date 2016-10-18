@@ -1,1 +1,2 @@
 user${"username":"user","password":"pass","email":"rip@harambe.com","firstName":"RIP","lastName":"Harambe","title":"User","accType":"USER"}
+blah${"username":"blah","password":"blah","email":"sdflkjsfd@hotmail.com","firstName":"Blah","lastName":"Blah","accType":"WORKER"}

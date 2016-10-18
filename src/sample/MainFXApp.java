@@ -140,6 +140,26 @@ public class MainFXApp extends Application {
         }
     }
 
+    public void goToEditProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("EditProfileScreen.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit Profile");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            RegisterController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
+
     public void goToSubmission() {
         try {
             FXMLLoader loader = new FXMLLoader();

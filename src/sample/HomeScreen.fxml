@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
    <top>
       <Label text="Water Purity Reporting App" BorderPane.alignment="CENTER">
          <font>
@@ -20,6 +20,7 @@
         <buttons>
           <Button fx:id="reportButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleReportButton" text="Submit a Report" />
             <Button fx:id="viewReports" mnemonicParsing="false" onAction="#handleViewSubmission" text="View Reports" />
+            <Button fx:id="editProfile" layoutX="143.0" layoutY="123.0" mnemonicParsing="false" onAction="#handleEditProfile" text="Edit Profile" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogout" text="Logout" textAlignment="CENTER" />
         </buttons>
          <BorderPane.margin>

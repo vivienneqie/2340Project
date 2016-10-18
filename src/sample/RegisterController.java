@@ -18,6 +18,7 @@ import java.io.PrintWriter;
  * @author Arshiya
  * @author Brittany
  * @author Mitchell
+ * @author Vivienne
  */
 public class RegisterController {
     @FXML

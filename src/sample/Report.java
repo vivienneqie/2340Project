@@ -1,9 +1,14 @@
 package sample;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 /**
- * Created by b on 10/14/16.
+ * @author Brittany
+ * @author Arshiya
+ * @author Vivienne
  */
 public class Report {
     //TODO: Change to Location type after implementing GMaps
@@ -11,6 +16,7 @@ public class Report {
     private String waterType;
     private String conditionType;
     private int id;
+    private String dateTime;
     private ReportDatabase rb = new ReportDatabase();
 
     public Report(String location, String waterType, String conditionType) {
@@ -19,6 +25,9 @@ public class Report {
         this.location = location;
         this.waterType = waterType;
         this.conditionType = conditionType;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        dateTime = dateFormat.format(date);
         rb.insertEntry(this);
     }
     public int getID() {
@@ -35,6 +44,10 @@ public class Report {
 
     public String getCondition() {
         return conditionType;
+    }
+
+    public String getDateTime() {
+        return dateTime;
     }
 
     public void updateWaterType(String waterType) {

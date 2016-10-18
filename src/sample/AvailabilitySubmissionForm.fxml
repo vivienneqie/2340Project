@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="reportFormPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AvailabilitySubmissionForm">
+<BorderPane fx:id="reportFormPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AvailabilitySubmissionForm">
    <top>
       <Label alignment="CENTER" prefHeight="52.0" prefWidth="291.0" text="Submit Water Availability" BorderPane.alignment="CENTER">
          <font>
@@ -32,6 +32,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+            <TextField fx:id="locationText" prefHeight="26.0" prefWidth="160.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="typeBox" onAction="#initialize" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="condBox" onAction="#initialize" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="submitReport" mnemonicParsing="false" onAction="#handleSubmission" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Button fx:id="cancelReport" mnemonicParsing="false" onAction="#handleCancelReport" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label text="Location">
@@ -39,19 +42,16 @@
                   <Insets left="15.0" />
                </padding>
             </Label>
-            <TextField fx:id="locationText" prefHeight="26.0" prefWidth="160.0" GridPane.columnIndex="1" />
             <Label text="Condition of Water" GridPane.rowIndex="2">
                <padding>
                   <Insets left="15.0" />
                </padding>
             </Label>
-            <ComboBox fx:id="condBox" onAction="#initialize" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Type of Water" GridPane.rowIndex="1">
                <padding>
                   <Insets left="15.0" />
                </padding>
             </Label>
-            <ComboBox fx:id="typeBox" onAction="#initialize" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </center>

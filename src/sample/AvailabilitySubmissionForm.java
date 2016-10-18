@@ -60,6 +60,8 @@ public class AvailabilitySubmissionForm {
         String waterType = typeBox.getSelectionModel().getSelectedItem().toString();
         String conditionType = condBox.getSelectionModel().getSelectedItem().toString();
         Report report = new Report(location, waterType, conditionType);
+        _dialogStage.close();
+        mainFXApplication.goToReports();
     }
 
     @FXML

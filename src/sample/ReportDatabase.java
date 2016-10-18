@@ -18,7 +18,6 @@ public class ReportDatabase {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
-            System.out.println("Connected!");
         }
 
         public void insertEntry(Report r) {
@@ -29,7 +28,6 @@ public class ReportDatabase {
                 stmt.executeUpdate(sql);
                 stmt.close();
                 conn.close();
-                System.out.println("Added entry!");
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);

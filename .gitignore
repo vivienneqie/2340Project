@@ -1,7 +1,5 @@
 # Build Files #
 .idea/
-.out/
 2340Project.iml
-libs/
 out/
-reports.db
+libs/

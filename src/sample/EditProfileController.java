@@ -56,7 +56,7 @@ public class EditProfileController {
     private void handleSave() {
         //implement
         _dialogStage.close();
-        mainFXApplication.goToReports();
+        mainFXApplication.goToHome();
     }
 
     @FXML

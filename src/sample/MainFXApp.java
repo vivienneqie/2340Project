@@ -151,12 +151,12 @@ public class MainFXApp extends Application {
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-            RegisterController controller = loader.getController();
+            EditProfileController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
             dialogStage.show();
         } catch (IOException e) {
-            System.out.println("error");
+            e.printStackTrace();
         }
     }
 

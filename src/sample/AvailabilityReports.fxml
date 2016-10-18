@@ -17,11 +17,6 @@
    </top>
    <center>
       <TableView fx:id="availTable" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="locationColumn" prefWidth="135.0" text="Location" />
-          <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="109.0" text="Type" />
-            <TableColumn fx:id="condColumn" prefWidth="130.0" text="Condition" />
-        </columns>
       </TableView>
    </center>
    <bottom>

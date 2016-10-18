@@ -10,7 +10,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -23,15 +22,6 @@ public class AvailabilityReportsController {
 
     @FXML
     private TableView availTable;
-
-    @FXML
-    private TableColumn locationColumn;
-
-    @FXML
-    private TableColumn typeColumn;
-
-    @FXML
-    private TableColumn condColumn;
 
     @FXML
     private Button reportButton;
@@ -61,13 +51,22 @@ public class AvailabilityReportsController {
 
     @FXML
     public void displayAll(ReportDatabase rb) {
-        //TODO: figure out why data isn't showing up
-        //source code: http://blog.ngopal.com.np/2011/10/19/dyanmic-tableview-data-from-database/comment-page-1/
-        //skipped dynamically adding columns
         try {
             Statement stmt = rb.conn.createStatement();
             ObservableList<ObservableList> data = FXCollections.observableArrayList();
             ResultSet rs = stmt.executeQuery( "SELECT * FROM AVAILABLE;" );
+            for(int i=1 ; i<rs.getMetaData().getColumnCount(); i++){
+                //We are using non property style for making dynamic table
+                final int j = i;
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){
+                    public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
+                        return new SimpleStringProperty(param.getValue().get(j).toString());
+                    }
+                });
+                availTable.getColumns().addAll(col);
+            }
+
             while (rs.next()) {
                 //Iterate Row
                 ObservableList<String> row = FXCollections.observableArrayList();
@@ -75,13 +74,9 @@ public class AvailabilityReportsController {
                     //Iterate Column
                     row.add(rs.getString(i));
                 }
-                System.out.println("Row [1] added "+row );
                 data.add(row);
             }
             availTable.setItems(data);
-            rs.close();
-            stmt.close();
-            rb.conn.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);

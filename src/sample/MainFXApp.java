@@ -22,6 +22,11 @@ public class MainFXApp extends Application {
 
     private Stage mainScreen;
 
+    /**
+     *
+     * @param primaryStage
+     * @throws FileNotFoundException
+     */
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
         File file = new File("users.txt");
@@ -33,6 +38,9 @@ public class MainFXApp extends Application {
         initRootLayout(mainScreen);
     }
 
+    /**
+     *
+     */
     public void goToWelcome() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -53,6 +61,10 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     * @param mainScreen
+     */
     private void initRootLayout(Stage mainScreen) {
         try {
             // Load root layout from fxml file.
@@ -80,6 +92,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToLogin() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -100,6 +115,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToHome() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -120,6 +138,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToRegistration() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -140,6 +161,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToEditProfile() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -160,6 +184,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToSubmission() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -180,6 +207,9 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     */
     public void goToReports() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -200,7 +230,11 @@ public class MainFXApp extends Application {
         }
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
-}
+    }

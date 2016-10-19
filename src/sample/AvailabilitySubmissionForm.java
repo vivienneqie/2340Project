@@ -36,12 +36,23 @@ public class AvailabilitySubmissionForm {
 
     private MainFXApp mainFXApplication;
 
+    /**
+     *
+     * @param mainFXApp
+     */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
+    /**
+     *
+     * @param dialogStage
+     */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
         String[] waterTypes = {"Bottled", "Welled", "Steam", "Lake", "Spring", "Other"};
@@ -53,6 +64,9 @@ public class AvailabilitySubmissionForm {
         condBox.setItems(condList);
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleSubmission() {
         //TODO: handle submission and verify fields here
@@ -64,6 +78,9 @@ public class AvailabilitySubmissionForm {
         mainFXApplication.goToReports();
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleCancelReport() {
         _dialogStage.close();

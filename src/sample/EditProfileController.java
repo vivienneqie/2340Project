@@ -51,17 +51,31 @@ public class EditProfileController {
 
     private MainFXApp mainFXApplication;
 
+    /**
+     *
+     * @param mainFXApp
+     */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
+    /**
+     *
+     * @param dialogStage
+     */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
 
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleSave() {
         //implement
@@ -143,6 +157,9 @@ public class EditProfileController {
         mainFXApplication.goToHome();
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleCancel() {
         _dialogStage.close();

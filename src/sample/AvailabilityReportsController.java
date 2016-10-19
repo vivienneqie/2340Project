@@ -30,24 +30,42 @@ public class AvailabilityReportsController {
 
     private MainFXApp mainFXApplication;
 
+    /**
+     *
+     * @param mainFXApp
+     */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
+    /**
+     *
+     * @param dialogStage
+     */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
         ReportDatabase rb = new ReportDatabase();
         displayAll(rb);
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleHomeButton() {
         _dialogStage.close();
         mainFXApplication.goToHome();
     }
 
+    /**
+     *
+     * @param rb
+     */
     @FXML
     public void displayAll(ReportDatabase rb) {
         try {

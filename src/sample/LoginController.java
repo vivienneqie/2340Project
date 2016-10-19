@@ -33,21 +33,39 @@ public class LoginController {
 
     private MainFXApp mainFXAppApplication;
 
+    /**
+     *
+     * @param mainFXApp
+     */
     public void setMainApp(MainFXApp mainFXApp) {
         mainFXAppApplication = mainFXApp;}
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
     }
 
+    /**
+     *
+     * @param dialogStage
+     */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isOkClicked() {
         return _okClicked;
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleOKPressed() {
         //First validate the data to ensure it is at least reasonable
@@ -65,16 +83,27 @@ public class LoginController {
         }
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleCancel() {
         _dialogStage.close();
         mainFXAppApplication.goToWelcome();
     }
 
+    /**
+     *
+     * @return
+     */
     public BorderPane getLoginPane() {
         return loginPane;
     }
 
+    /**
+     *
+     * @return
+     */
     private boolean isInputValid() {
         //Mapped by username and user for easy search by username
         Map<String, User> users = User.getUserDB();

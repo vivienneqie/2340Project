@@ -19,6 +19,12 @@ public class Report {
     private String dateTime;
     private ReportDatabase rb = new ReportDatabase();
 
+    /**
+     *
+     * @param location
+     * @param waterType
+     * @param conditionType
+     */
     public Report(String location, String waterType, String conditionType) {
         Random r = new Random();
         id = r.nextInt() * 7 + 11;
@@ -30,31 +36,60 @@ public class Report {
         dateTime = dateFormat.format(date);
         rb.insertEntry(this);
     }
+
+    /**
+     *
+     * @return
+     */
     public int getID() {
         return id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLocation() {
         return location;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getType() {
         return waterType;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCondition() {
         return conditionType;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDateTime() {
         return dateTime;
     }
 
+    /**
+     *
+     * @param waterType
+     */
     public void updateWaterType(String waterType) {
         this.waterType = waterType;
         rb.updateWaterType(this);
     }
 
+    /**
+     *
+     * @param conditionType
+     */
     public void updateConditionType(String conditionType) {
         this.conditionType = conditionType;
         rb.updateCondition(this);

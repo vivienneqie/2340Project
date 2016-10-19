@@ -2,3 +2,4 @@ user${"username":"user","password":"pass","email":"rip@harambe.com","firstNameâ€
 blah${"username":"blah","password":"blah","email":"sdflkjsfd@hotmail.com","firstName":"Blah","lastName":"Blah","accType":"WORKER"}
 g${"username":"g","password":"j","email":"d","firstName":"g","lastName":"h","accType":"WORKER"}
 a${"username":"a","password":"a","email":"a","firstName":"a","lastName":"a","accType":"MANAGER"}
+g${"username":"g","password":"g","email":"gh","firstName":"g","lastName":"h","accType":"USER"}

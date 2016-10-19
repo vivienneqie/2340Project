@@ -8,6 +8,12 @@ public class Location {
     private double longitude;
     private double latitude;
 
+    /**
+     *
+     * @param name
+     * @param longitude
+     * @param latitude
+     */
     public Location(String name, double longitude, double latitude) {
         this.name = name;
         this.longitude = longitude;

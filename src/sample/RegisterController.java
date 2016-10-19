@@ -62,12 +62,23 @@ public class RegisterController {
 
     private MainFXApp mainFXApplication;
 
+    /**
+     *
+     * @param mainFXApp
+     */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
+    /**
+     *
+     * @param dialogStage
+     */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
         ObservableList aList = FXCollections.observableArrayList(AccountTypes.values());
@@ -75,6 +86,10 @@ public class RegisterController {
         accBox.setItems(aList);
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     @FXML
     private void handleRegister() throws FileNotFoundException {
         if (fnText.getText().equals("") || lnText.getText().equals("") || unText.getText().equals("")
@@ -149,12 +164,19 @@ public class RegisterController {
         }
     }
 
+    /**
+     *
+     */
     @FXML
     private void handleCancel() {
         _dialogStage.close();
         mainFXApplication.goToLogin();
     }
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         //TODO: accountType
         newUser = new User(unText.getText(), pwText.getText(),

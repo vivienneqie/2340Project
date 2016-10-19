@@ -50,9 +50,12 @@ public class RegisterController {
 
     private Gson gson;
 
+    private static User newUser;
+
     private static File file = new File("users.txt");
 
     private Stage _dialogStage;
+
 
     /** flag to signal whether dialog was closed normally */
     private boolean _okClicked = false;
@@ -110,7 +113,7 @@ public class RegisterController {
                     default: accountType = null;
                         break;
                 }
-                User newUser = new User(unText.getText(), pwText.getText(),
+                newUser = new User(unText.getText(), pwText.getText(),
                         emailText.getText(), fnText.getText(), lnText.getText(), accountType);
                 newUser.addToDatabase(newUser.getUsername(), newUser);
                 gson = new Gson();
@@ -150,6 +153,13 @@ public class RegisterController {
     private void handleCancel() {
         _dialogStage.close();
         mainFXApplication.goToLogin();
+    }
+
+    public User getUser() {
+        //TODO: accountType
+        newUser = new User(unText.getText(), pwText.getText(),
+                emailText.getText(), fnText.getText(), lnText.getText(), AccountTypes.USER);
+        return newUser;
     }
 
 }

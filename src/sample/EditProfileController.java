@@ -64,8 +64,10 @@ public class EditProfileController {
 
     @FXML
     private void handleSave() {
-        //implement
-
+        //TODO: figure out how to find out who the user is when using the application
+//        User user = new User();
+//        boolean changed = false;
+//
 //        if (fnText.getText() != null) {
 //            user.setFirstName(fnText.getText());
 //            changed = true;

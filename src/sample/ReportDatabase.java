@@ -61,4 +61,18 @@ public class ReportDatabase {
             System.exit(0);
         }
     }
+
+    public void updateUser(User u, String attribute) {
+        try{
+            stmt = conn.createStatement();
+            String attrCaps = attribute.toUpperCase();
+            //find attribute method
+            //String sql = "UPDATE USER set" + attrCaps + " = " + r.whateverMethod() + "where = " + attrCaps + ";";
+            //stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

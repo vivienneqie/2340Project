@@ -31,21 +31,21 @@ public class AvailabilityReportsController {
     private MainFXApp mainFXApplication;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main application
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
     /**
-     *
-     * @param dialogStage
+     * Method to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
+     * Method to initialize the database
      */
     @FXML
     private void initialize() {
@@ -54,7 +54,7 @@ public class AvailabilityReportsController {
     }
 
     /**
-     *
+     * Method to handle actions when home button is pressed
      */
     @FXML
     private void handleHomeButton() {
@@ -63,8 +63,8 @@ public class AvailabilityReportsController {
     }
 
     /**
-     *
-     * @param rb
+     * Method to display all the elements in the database in a table
+     * @param rb ReportDatabase
      */
     @FXML
     public void displayAll(ReportDatabase rb) {

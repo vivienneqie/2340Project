@@ -34,6 +34,11 @@ public class Worker extends User {
         super(username, password, email, firstName, lastName, WORKER);
     }
 
+    /**
+     * Equals method
+     * @param o object to compare
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -47,6 +52,10 @@ public class Worker extends User {
                 && Objects.equals(email, worker.email);
     }
 
+    /**
+     * Hash code method
+     * @return int hash code of username and email
+     */
     @Override
     public int hashCode() {
         return Objects.hash(username, email);

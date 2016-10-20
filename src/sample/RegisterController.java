@@ -63,21 +63,21 @@ public class RegisterController {
     private MainFXApp mainFXApplication;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main application
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
     /**
-     *
-     * @param dialogStage
+     * Method to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
+     * Method to initialize the view
      */
     @FXML
     private void initialize() {
@@ -87,8 +87,8 @@ public class RegisterController {
     }
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Method to handle actions when the register button is pressed
+     * @throws FileNotFoundException exception
      */
     @FXML
     private void handleRegister() throws FileNotFoundException {
@@ -165,7 +165,7 @@ public class RegisterController {
     }
 
     /**
-     *
+     * Method to handle actions when the cancel button is pressed
      */
     @FXML
     private void handleCancel() {
@@ -174,8 +174,8 @@ public class RegisterController {
     }
 
     /**
-     *
-     * @return
+     * Method to get the user
+     * @return User
      */
     public User getUser() {
         //TODO: accountType

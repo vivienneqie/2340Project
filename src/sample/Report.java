@@ -20,10 +20,10 @@ public class Report {
     private ReportDatabase rb = new ReportDatabase();
 
     /**
-     *
-     * @param location
-     * @param waterType
-     * @param conditionType
+     * Report constructor
+     * @param location location of water
+     * @param waterType type of water
+     * @param conditionType condition of water
      */
     public Report(String location, String waterType, String conditionType) {
         Random r = new Random();
@@ -38,48 +38,48 @@ public class Report {
     }
 
     /**
-     *
-     * @return
+     * Getter method for report ID
+     * @return int
      */
     public int getID() {
         return id;
     }
 
     /**
-     *
-     * @return
+     * Getter method for location
+     * @return String
      */
     public String getLocation() {
         return location;
     }
 
     /**
-     *
-     * @return
+     * Getter method for type of water
+     * @return String
      */
     public String getType() {
         return waterType;
     }
 
     /**
-     *
-     * @return
+     * Getter method for condition of water
+     * @return String
      */
     public String getCondition() {
         return conditionType;
     }
 
     /**
-     *
-     * @return
+     * Getter method for date and time
+     * @return String
      */
     public String getDateTime() {
         return dateTime;
     }
 
     /**
-     *
-     * @param waterType
+     * Method to update the water type locally and in the database
+     * @param waterType String
      */
     public void updateWaterType(String waterType) {
         this.waterType = waterType;
@@ -87,8 +87,8 @@ public class Report {
     }
 
     /**
-     *
-     * @param conditionType
+     * Method to update the condition of water locally and in the database
+     * @param conditionType String
      */
     public void updateConditionType(String conditionType) {
         this.conditionType = conditionType;

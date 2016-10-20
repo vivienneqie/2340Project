@@ -37,21 +37,21 @@ public class AvailabilitySubmissionForm {
     private MainFXApp mainFXApplication;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main applcation
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
     /**
-     *
-     * @param dialogStage
+     * MEthod to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
+     * Method to initialize the view and combo boxes
      */
     @FXML
     private void initialize() {
@@ -65,7 +65,7 @@ public class AvailabilitySubmissionForm {
     }
 
     /**
-     *
+     * Method to handle actions when the submission button is pressed
      */
     @FXML
     private void handleSubmission() {
@@ -79,7 +79,7 @@ public class AvailabilitySubmissionForm {
     }
 
     /**
-     *
+     * Method to handle actions when the cancel button is pressed
      */
     @FXML
     private void handleCancelReport() {

@@ -49,6 +49,11 @@ public class User {
         this.accType = accType;
     }
 
+    /**
+     * Equals method
+     * @param o object to compare
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -62,6 +67,10 @@ public class User {
                 && Objects.equals(email, user.email);
     }
 
+    /**
+     * Hash code method
+     * @return int hash code of username and email
+     */
     @Override
     public int hashCode() {
         return Objects.hash(username, email);

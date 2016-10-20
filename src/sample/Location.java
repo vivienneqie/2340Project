@@ -9,10 +9,10 @@ public class Location {
     private double latitude;
 
     /**
-     *
-     * @param name
-     * @param longitude
-     * @param latitude
+     * Location constructor
+     * @param name String name of location
+     * @param longitude double longitude of location
+     * @param latitude double latitude of location
      */
     public Location(String name, double longitude, double latitude) {
         this.name = name;

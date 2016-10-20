@@ -23,9 +23,9 @@ public class MainFXApp extends Application {
     private Stage mainScreen;
 
     /**
-     *
-     * @param primaryStage
-     * @throws FileNotFoundException
+     * Method to start the main application
+     * @param primaryStage Stage
+     * @throws FileNotFoundException exception
      */
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
@@ -39,7 +39,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to welcome screen
      */
     public void goToWelcome() {
         try {
@@ -62,8 +62,8 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
-     * @param mainScreen
+     * Method to initialize the root layout of the main screen
+     * @param mainScreen Stage
      */
     private void initRootLayout(Stage mainScreen) {
         try {
@@ -93,7 +93,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to login screen
      */
     public void goToLogin() {
         try {
@@ -116,7 +116,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to the home screen
      */
     public void goToHome() {
         try {
@@ -139,7 +139,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to the registration screen
      */
     public void goToRegistration() {
         try {
@@ -162,7 +162,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to the edit profile screen
      */
     public void goToEditProfile() {
         try {
@@ -185,7 +185,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to the water availability submission screen
      */
     public void goToSubmission() {
         try {
@@ -208,7 +208,7 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
+     * Method to go to the page to view reports
      */
     public void goToReports() {
         try {
@@ -231,8 +231,8 @@ public class MainFXApp extends Application {
     }
 
     /**
-     *
-     * @param args
+     * Main method
+     * @param args arguments
      */
     public static void main(String[] args) {
         launch(args);

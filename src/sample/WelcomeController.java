@@ -10,22 +10,22 @@ public class WelcomeController {
     private Stage _dialogStage;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main application
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) {
         mainFXApplication = mainFXApp;}
 
     /**
-     *
-     * @param dialogStage
+     * Method to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
+     * Method to handle actions when the register button is pressed
      */
     @FXML
     public void onRegPressed() {
@@ -34,7 +34,7 @@ public class WelcomeController {
     }
 
     /**
-     *
+     * Method to handle actions when the login button is pressed
      */
     @FXML
     public void onLoginPressed() {

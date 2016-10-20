@@ -52,21 +52,21 @@ public class EditProfileController {
     private MainFXApp mainFXApplication;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main application
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }
 
     /**
-     *
-     * @param dialogStage
+     * Method to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
+     * Method to initialize the view
      */
     @FXML
     private void initialize() {
@@ -74,7 +74,7 @@ public class EditProfileController {
     }
 
     /**
-     *
+     * Method to handle actions when the save button is pressed
      */
     @FXML
     private void handleSave() {
@@ -160,7 +160,7 @@ public class EditProfileController {
     }
 
     /**
-     *
+     * Method to handle actions when the cancel button is pressed
      */
     @FXML
     private void handleCancel() {

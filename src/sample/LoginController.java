@@ -34,37 +34,37 @@ public class LoginController {
     private MainFXApp mainFXAppApplication;
 
     /**
-     *
-     * @param mainFXApp
+     * Method to set the main application
+     * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) {
         mainFXAppApplication = mainFXApp;}
 
     /**
-     *
+     * Method to initialize the view
      */
     @FXML
     private void initialize() {
     }
 
     /**
-     *
-     * @param dialogStage
+     * Method to set the dialog stage
+     * @param dialogStage Stage
      */
     public void setDialogStage(Stage dialogStage) {
         _dialogStage = dialogStage;
     }
 
     /**
-     *
-     * @return
+     * Method to check if the click was successful
+     * @return boolean
      */
     public boolean isOkClicked() {
         return _okClicked;
     }
 
     /**
-     *
+     * Method to handle actions when the login button is pressed
      */
     @FXML
     private void handleOKPressed() {
@@ -84,7 +84,7 @@ public class LoginController {
     }
 
     /**
-     *
+     * Method to handle actions when the cancel button is presed
      */
     @FXML
     private void handleCancel() {
@@ -93,16 +93,16 @@ public class LoginController {
     }
 
     /**
-     *
-     * @return
+     * Method to get login pane
+     * @return BorderPane
      */
     public BorderPane getLoginPane() {
         return loginPane;
     }
 
     /**
-     *
-     * @return
+     * Method to check if the input username and password were valid
+     * @return boolean
      */
     private boolean isInputValid() {
         //Mapped by username and user for easy search by username

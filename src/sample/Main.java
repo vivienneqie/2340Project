@@ -21,9 +21,9 @@ import java.util.Map;
 public class Main extends Application {
 
     /**
-     *
-     * @param primaryStage
-     * @throws Exception
+     * Method to start the main screen of the application
+     * @param primaryStage Stage
+     * @throws Exception exception
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -204,8 +204,8 @@ public class Main extends Application {
     }
 
     /**
-     *
-     * @param args
+     * Main method
+     * @param args arguments
      */
     public static void main(String[] args) {
         launch(args);

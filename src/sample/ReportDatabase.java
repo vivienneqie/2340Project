@@ -9,7 +9,7 @@ public class ReportDatabase {
     Statement stmt = null;
 
     /**
-     *
+     * Report database constructor
      */
     ReportDatabase() {
         try {
@@ -24,8 +24,8 @@ public class ReportDatabase {
     }
 
     /**
-     *
-     * @param r
+     * Method to insert an report into the database
+     * @param r Report
      */
     public void insertEntry(Report r) {
         try {
@@ -42,8 +42,8 @@ public class ReportDatabase {
     }
 
     /**
-     *
-     * @param r
+     * Method to update the water type in a report
+     * @param r Report
      */
     public void updateWaterType(Report r) {
         try{
@@ -60,8 +60,8 @@ public class ReportDatabase {
     }
 
     /**
-     *
-     * @param r
+     * Method to update the condition of the water in a report
+     * @param r Report
      */
     public void updateCondition(Report r) {
         try{
@@ -77,6 +77,11 @@ public class ReportDatabase {
         }
     }
 
+    /**
+     * Method to update the user in a report
+     * @param u User
+     * @param attribute String
+     */
     public void updateUser(User u, String attribute) {
         try{
             stmt = conn.createStatement();

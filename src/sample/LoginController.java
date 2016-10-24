@@ -28,6 +28,8 @@ public class LoginController {
 
     private Stage _dialogStage;
 
+    private User activeuser;
+
     /** flag to signal whether dialog was closed normally */
     private boolean _okClicked = false;
 
@@ -109,8 +111,28 @@ public class LoginController {
         Map<String, User> users = User.getUserDB();
         if (users.get(userText.getText()) != null) {
             User theUser = users.get(userText.getText());
-            return passText.getText().equals(theUser.getPassword());
+            if (passText.getText().equals(theUser.getPassword())) {
+                setActiveUser(theUser);
+                return true;
+            }
+            return false;
         }
         return false;
+    }
+
+    /**
+     * saves an instance of the active user once they have been authenticated
+     * @param u the user to be set as active
+     */
+    private void setActiveUser(User u) {
+        activeuser = u;
+    }
+
+    /**
+     * returns the active user
+     * @return the user currently logged in
+     */
+    public User getActiveUser() {
+        return activeuser;
     }
 }

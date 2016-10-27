@@ -34,6 +34,7 @@ public class MainFXApp extends Application {
             //Populates user database with all users who have registered before
             User.populateUserDB(file);
         }
+        MapController mapController = new MapController(this, primaryStage);
         mainScreen = primaryStage;
         initRootLayout(mainScreen);
     }

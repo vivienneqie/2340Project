@@ -231,6 +231,16 @@ public class MainFXApp extends Application {
     }
 
     /**
+     * Method to go to the map view of water availability
+     */
+    public void goToMapView() {
+        MapController mapController = new MapController(this, mainScreen);
+        BorderPane bp = mapController.getBp();
+        Scene mapScene = new Scene(bp);
+        mainScreen.setScene(mapScene);
+    }
+
+    /**
      * Main method
      * @param args arguments
      */

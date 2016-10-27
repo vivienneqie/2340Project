@@ -4,13 +4,16 @@ import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,6 +25,9 @@ public class MapController implements Initializable, MapComponentInitializedList
     private GoogleMap map;
     private MainFXApp app;
     private Stage stage;
+
+    //Remove this after scenebuilding
+    private BorderPane bp;
 
     /**
      * Constructor for map controller
@@ -41,15 +47,21 @@ public class MapController implements Initializable, MapComponentInitializedList
     private void setUpMapView(Stage stage) {
         mapView = new GoogleMapView();
         mapView.addMapInializedListener(this);
-        BorderPane bp = new BorderPane();
+        //BorderPane bp = new BorderPane();
         MenuBar mb = new MenuBar();
         Menu file = new Menu("File");
         Menu edit = new Menu("Edit");
         Menu view = new Menu("View");
+        Button goHome = new Button("Home");
+        goHome.setOnAction(event -> {
+            stage.close();
+            app.goToHome();
+        });
         //TODO: add menu options
         mb.getMenus().addAll(file, edit, view);
         bp.setTop(mb);
         bp.setCenter(mapView);
+        bp.setBottom(goHome);
 
         Scene scene = new Scene(bp);
         stage.setScene(scene);
@@ -78,5 +90,13 @@ public class MapController implements Initializable, MapComponentInitializedList
     public void initialize(URL location, ResourceBundle resources) {
 
 
+    }
+
+    /**
+     * A getter method for bp bc i'm dum
+     * @return bp
+     */
+    public BorderPane getBp() {
+        return bp;
     }
 }

@@ -18,6 +18,9 @@ public class HomeController {
     @FXML
     private Button editProfile;
 
+    @FXML
+    private Button viewMap;
+
     private MainFXApp mainFXAppApplication;
 
     private Stage _dialogStage;
@@ -80,5 +83,11 @@ public class HomeController {
     private void handleEditProfile() {
         _dialogStage.close();
         mainFXAppApplication.goToEditProfile();
+    }
+
+    @FXML
+    private void handleMapView() {
+        _dialogStage.close();
+        mainFXAppApplication.goToMapView();
     }
 }

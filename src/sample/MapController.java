@@ -47,7 +47,7 @@ public class MapController implements Initializable, MapComponentInitializedList
     private void setUpMapView(Stage stage) {
         mapView = new GoogleMapView();
         mapView.addMapInializedListener(this);
-        //BorderPane bp = new BorderPane();
+        bp = new BorderPane();
         MenuBar mb = new MenuBar();
         Menu file = new Menu("File");
         Menu edit = new Menu("Edit");

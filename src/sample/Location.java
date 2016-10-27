@@ -1,6 +1,5 @@
 package sample;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
 
 /**
  * Created by b on 10/15/16.
@@ -9,7 +8,6 @@ public class Location {
     private String name;
     private double longitude;
     private double latitude;
-    private LatLong position;
 
     /**
      * Location constructor
@@ -48,13 +46,6 @@ public class Location {
         return latitude;
     }
 
-    /**
-     * A getter method for latitude
-     * @return latitude
-     */
-    public LatLong getPosition() {
-        return position;
-    }
 
     @Override
     public String toString() {

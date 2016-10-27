@@ -94,6 +94,7 @@ public class MapController implements Initializable, MapComponentInitializedList
         LatLong position = new LatLong(longitude, latitude);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(position);
+        markerOptions.visible(Boolean.TRUE);
         Marker marker = new Marker(markerOptions);
         marker.setVisible(true);
         marker.setTitle(location.getName());
@@ -111,7 +112,6 @@ public class MapController implements Initializable, MapComponentInitializedList
 
     @Override
     public void mapInitialized() {
-        mapView.addMapInializedListener(this);
         MapOptions options = new MapOptions();
         LatLong center = new LatLong(33.7, -84.4);
 
@@ -133,8 +133,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
+        mapView.addMapInializedListener(this);
     }
 
     /**

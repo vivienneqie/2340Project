@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class Report {
     //TODO: Change to Location type after implementing GMaps
-    private String location;
+    private Location location;
     private String waterType;
     private String conditionType;
     private int id;
@@ -25,7 +25,7 @@ public class Report {
      * @param waterType type of water
      * @param conditionType condition of water
      */
-    public Report(String location, String waterType, String conditionType) {
+    public Report(Location location, String waterType, String conditionType) {
         Random r = new Random();
         id = r.nextInt() * 7 + 11;
         this.location = location;
@@ -49,7 +49,7 @@ public class Report {
      * Getter method for location
      * @return String
      */
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 

@@ -125,7 +125,7 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Home");
+            dialogStage.setTitle("HOME");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
@@ -148,7 +148,7 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Register");
+            dialogStage.setTitle("REGISTER");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
@@ -171,7 +171,7 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Profile");
+            dialogStage.setTitle("EDIT PROFILE");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
@@ -194,7 +194,7 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Submit Here!");
+            dialogStage.setTitle("SUBMIT HERE!");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);

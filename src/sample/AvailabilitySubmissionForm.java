@@ -8,6 +8,7 @@ import javafx.fxml.*;
 import javafx.scene.control.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Archie on 10/12/2016.
@@ -70,7 +71,13 @@ public class AvailabilitySubmissionForm {
     @FXML
     private void handleSubmission() {
         //TODO: handle submission and verify fields here
-        String location = locationText.getText();
+        String locationName = locationText.getText();
+        Random rand = new Random();
+        int poop = rand.nextInt(20) - 10;
+        double scaling = (double) poop / 100;
+        int pee = rand.nextInt(20) - 10;
+        double scale = (double) pee / 100;
+        Location location = new Location(locationName, 33 + scaling, scale);
         String waterType = typeBox.getSelectionModel().getSelectedItem().toString();
         String conditionType = condBox.getSelectionModel().getSelectedItem().toString();
         Report report = new Report(location, waterType, conditionType);

@@ -80,7 +80,7 @@ public class MapController implements Initializable, MapComponentInitializedList
                 .rotateControl(false)
                 .scaleControl(false)
                 .streetViewControl(false)
-                .zoomControl(false)
+                .zoomControl(true)
                 .mapType(MapTypeIdEnum.ROADMAP);
 
         map = mapView.createMap(options);

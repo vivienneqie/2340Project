@@ -217,7 +217,7 @@ public class MainFXApp extends Application {
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Water Availability Reports");
+            dialogStage.setTitle("WATER AVAILABILITY REPORTS");
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
@@ -234,10 +234,19 @@ public class MainFXApp extends Application {
      * Method to go to the map view of water availability
      */
     public void goToMapView() {
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("MAP");
+        dialogStage.initOwner(mainScreen);
         MapController mapController = new MapController(this, mainScreen);
         BorderPane bp = mapController.getBp();
-        Scene mapScene = new Scene(bp);
-        mainScreen.setScene(mapScene);
+        if (bp.getScene() == null) {
+            Scene mapScene = new Scene(bp);
+            dialogStage.setScene(mapScene);
+        } else {
+            dialogStage.setScene(bp.getScene());
+        }
+        dialogStage.show();
+
     }
 
     /**

@@ -97,6 +97,7 @@ public class MapController implements Initializable, MapComponentInitializedList
      * @return bp
      */
     public BorderPane getBp() {
+        setUpMapView(stage);
         return bp;
     }
 }

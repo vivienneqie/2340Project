@@ -72,10 +72,10 @@ public class AvailabilityReportsController {
             Statement stmt = rb.conn.createStatement();
             ObservableList<ObservableList> data = FXCollections.observableArrayList();
             ResultSet rs = stmt.executeQuery( "SELECT * FROM AVAILABLE;" );
-            for(int i=1 ; i<rs.getMetaData().getColumnCount(); i++){
+            for(int i = 1 ; i < rs.getMetaData().getColumnCount(); i++){
                 //We are using non property style for making dynamic table
                 final int j = i;
-                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
                 col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){
                     public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
                         return new SimpleStringProperty(param.getValue().get(j).toString());

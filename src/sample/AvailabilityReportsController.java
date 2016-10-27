@@ -12,6 +12,7 @@ import javafx.util.Callback;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Created by Archie on 10/12/2016.
@@ -67,7 +68,8 @@ public class AvailabilityReportsController {
      * @param rb ReportDatabase
      */
     @FXML
-    public void displayAll(ReportDatabase rb) {
+    public ArrayList<ArrayList> displayAll(ReportDatabase rb) {
+        ArrayList<ArrayList> list = new ArrayList<ArrayList>();
         try {
             Statement stmt = rb.conn.createStatement();
             ObservableList<ObservableList> data = FXCollections.observableArrayList();
@@ -94,9 +96,15 @@ public class AvailabilityReportsController {
                 data.add(row);
             }
             availTable.setItems(data);
+            int i = 1;
+            for (ArrayList l : list) {
+                l = new ArrayList(data.get(i));
+                i++;
+            }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
+        return list;
     }
 }

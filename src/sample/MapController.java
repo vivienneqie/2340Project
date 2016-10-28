@@ -127,7 +127,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 
         map = mapView.createMap(options);
 
-        Location l = new Location("gatech", 33.46, 84.24);
+        Location l = new Location("gatech", 34.38, -84);
         addMarkerToMap(map, l);
     }
 
@@ -137,11 +137,10 @@ public class MapController implements Initializable, MapComponentInitializedList
     }
 
     /**
-     * A getter method for bp bc i'm dum
-     * @return bp
+     * A getter method for the stage with the border pane
+     * @return stage
      */
-    public BorderPane getBp() {
-        setUpMapView(stage);
-        return bp;
+    public Stage getStage() {
+        return stage;
     }
 }

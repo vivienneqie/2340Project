@@ -239,14 +239,14 @@ public class MainFXApp extends Application {
         dialogStage.setTitle("MAP");
         dialogStage.initOwner(mainScreen);
         MapController mapController = new MapController(this, mainScreen);
-        BorderPane bp = mapController.getBp();
-        if (bp.getScene() == null) {
-            Scene mapScene = new Scene(bp);
-            dialogStage.setScene(mapScene);
-        } else {
-            dialogStage.setScene(bp.getScene());
-        }
-        dialogStage.show();
+        Stage mapStage = mapController.getStage();
+//        if (bp.getScene() == null) {
+//            Scene mapScene = new Scene(bp);
+//            dialogStage.setScene(mapScene);
+//        } else {
+//            dialogStage.setScene(bp.getScene());
+//        }
+        mapStage.show();
 
     }
 

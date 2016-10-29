@@ -21,6 +21,9 @@ public class HomeController {
     @FXML
     private Button viewMap;
 
+    @FXML
+    private Button purityReportButton;
+
     private MainFXApp mainFXAppApplication;
 
     private Stage _dialogStage;
@@ -89,5 +92,11 @@ public class HomeController {
     private void handleMapView() {
         _dialogStage.close();
         mainFXAppApplication.goToMapView();
+    }
+
+    @FXML
+    private void handlePurityReportButton() {
+        _dialogStage.close();
+        mainFXAppApplication.goToPuritySubmission();
     }
 }

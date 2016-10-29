@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="reportFormPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PurityReportController">
+    <top>
+        <Label alignment="CENTER" prefHeight="52.0" prefWidth="291.0" text="Submit Water Purity Report" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+        <GridPane prefHeight="412.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="322.0" />
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="318.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="68.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="locationText" prefHeight="26.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                <ComboBox fx:id="condBox" onAction="#initialize" prefWidth="270.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                <Button fx:id="submitReport" mnemonicParsing="false" onAction="#handleSubmission" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                <Button fx:id="cancelReport" mnemonicParsing="false" onAction="#handleCancelReport" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                <Label text="Location" GridPane.halignment="CENTER">
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                </Label>
+                <Label text="Overall Condition" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                </Label>
+            <Label layoutX="10.0" layoutY="133.0" text="Virus PPM" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="157.0" text="Contaminant PPM" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="virusText" layoutX="244.0" layoutY="8.0" prefHeight="26.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <TextField fx:id="contaminantText" layoutX="244.0" layoutY="149.0" prefHeight="26.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>

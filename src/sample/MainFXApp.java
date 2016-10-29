@@ -186,6 +186,29 @@ public class MainFXApp extends Application {
     }
 
     /**
+     * Method to go to the purity submission screen
+     */
+    public void goToPuritySubmission() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("PurityReportForm.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("SUBMIT PURITY REPORT");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            PurityReportController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
+
+    /**
      * Method to go to the water availability submission screen
      */
     public void goToSubmission() {
@@ -247,7 +270,6 @@ public class MainFXApp extends Application {
 //            dialogStage.setScene(bp.getScene());
 //        }
         mapStage.show();
-
     }
 
     /**

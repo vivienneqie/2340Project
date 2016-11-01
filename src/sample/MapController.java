@@ -159,10 +159,10 @@ public class MapController implements Initializable, MapComponentInitializedList
      * retrieves all data from the db and creates all reports
      * @return arrayList of reports
      */
-    public ArrayList generateReports() {
+    public ArrayList<Report> generateReports() {
         ReportDatabase rb = new ReportDatabase();
         ArrayList list = new ArrayList<>();
-        ArrayList ret = new ArrayList<>();
+        ArrayList<Report> ret = new ArrayList<>();
         try {
             Statement stmt = rb.conn.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT ID FROM AVAILABLE;" );

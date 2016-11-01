@@ -82,24 +82,24 @@ public class EditProfileController {
         LoginController lg = new LoginController();
         User user = lg.getActiveUser();
         boolean changed = false;
-
-        if (fnText.getText() != "") {
+        //ERROR: when setting anything, it returns a null pointer exception
+        if (!(fnText.getText().trim().isEmpty())) {
             user.setFirstName(fnText.getText());
             changed = true;
         }
-        if (lnText.getText() != "") {
+        if (!(lnText.getText().trim().isEmpty())) {
             user.setLastName(lnText.getText());
             changed = true;
         }
-        if (emailText.getText() != "") {
+        if (!(emailText.getText().trim().isEmpty())) {
             user.setEmail(emailText.getText());
             changed = true;
         }
-        if (unText.getText() != "") {
+        if (!(unText.getText().trim().isEmpty())) {
             user.setUsername(unText.getText());
             changed = true;
         }
-        if (pwText.getText() != "" || pwcText.getText() != "") {
+        if (!(pwText.getText().trim().isEmpty()) || !(pwcText.getText().trim().isEmpty())) {
             if (pwText.getText().equals(pwcText.getText())) {
                 user.setPassword(pwText.getText());
                 changed = true;
@@ -111,7 +111,7 @@ public class EditProfileController {
                 alert.showAndWait();
             }
         }
-        if (pnText.getText() != "") {
+        if (!(pnText.getText().trim().isEmpty())) {
             user.setPhoneNumber(pnText.getText());
             changed = true;
         }

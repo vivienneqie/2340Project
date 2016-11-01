@@ -16,6 +16,9 @@ public class HomeController {
     private Button viewReports;
 
     @FXML
+    private Button viewPurityReports;
+
+    @FXML
     private Button editProfile;
 
     @FXML
@@ -68,6 +71,12 @@ public class HomeController {
     private void handleReportButton() {
         _dialogStage.close();
         mainFXAppApplication.goToSubmission();
+    }
+
+    @FXML
+    private void handlePurityViewButton() {
+        _dialogStage.close();
+        mainFXAppApplication.goToPurityReports();
     }
 
     /**

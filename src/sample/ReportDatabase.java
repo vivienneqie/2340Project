@@ -93,4 +93,123 @@ public class ReportDatabase {
             e.printStackTrace();
         }
     }
+
+    /**
+     * updates username of user
+     * @param u user
+     */
+    public void updateUserName(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set username = " + u.getUsername() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates password of user
+     * @param u user
+     */
+    public void updateUserPass(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set password = " + u.getPassword() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates email of user
+     * @param u user
+     */
+    public void updateUserEmail(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set email = " + u.getEmail() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates first name of user
+     * @param u user
+     */
+    public void updateUserFirst(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set firstName = " + u.getFirstName() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates last name of user
+     * @param u user
+     */
+    public void updateUserLast(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set lastName = " + u.getLastName() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates phone number of user
+     * @param u user
+     */
+    public void updateUserPhone(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set phoneNumber = " + u.getPhoneNumber() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    /**
+     * updates email of user
+     * @param u user
+     */
+    public void updateUserHome(User u) {
+        try{
+            stmt = conn.createStatement();
+            String sql = "UPDATE USER set homeAddress = " + u.getHomeAddress() + "where ID=" + u.getID() + ";";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
 }

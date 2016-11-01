@@ -79,44 +79,45 @@ public class EditProfileController {
     @FXML
     private void handleSave() {
         //TODO: figure out how to find out who the user is when using the application
-//        User user = new User();
-//        boolean changed = false;
-//
-//        if (fnText.getText() != null) {
-//            user.setFirstName(fnText.getText());
-//            changed = true;
-//        }
-//        if (lnText.getText() != null) {
-//            user.setLastName(lnText.getText());
-//            changed = true;
-//        }
-//        if (emailText.getText() != null) {
-//            user.setEmail(emailText.getText());
-//            changed = true;
-//        }
-//        if (unText.getText() != null) {
-//            user.setUsername(unText.getText());
-//            changed = true;
-//        }
-//        if (pwText.getText() != null || pwcText.getText() != null) {
-//            if (pwText.getText().equals(pwcText.getText())) {
-//                user.setPassword(pwText.getText());
-//                changed = true;
-//            } else {
-//                Alert alert = new Alert(Alert.AlertType.ERROR);
-//                alert.setTitle("Error");
-//                alert.setHeaderText("Passwords do not match.");
-//                alert.setContentText("Password confirmation is not identical to your password.");
-//                alert.showAndWait();
-//            }
-//        }
-//        if (pnText.getText() != null) {
-//            user.setPhoneNumber(pnText.getText());
-//            changed = true;
-//        }
-//        if (changed) {
-//            User.addToDatabase(user.getUsername(), user);
-//        }
+        LoginController lg = new LoginController();
+        User user = lg.getActiveUser();
+        boolean changed = false;
+
+        if (fnText.getText() != "") {
+            user.setFirstName(fnText.getText());
+            changed = true;
+        }
+        if (lnText.getText() != "") {
+            user.setLastName(lnText.getText());
+            changed = true;
+        }
+        if (emailText.getText() != "") {
+            user.setEmail(emailText.getText());
+            changed = true;
+        }
+        if (unText.getText() != "") {
+            user.setUsername(unText.getText());
+            changed = true;
+        }
+        if (pwText.getText() != "" || pwcText.getText() != "") {
+            if (pwText.getText().equals(pwcText.getText())) {
+                user.setPassword(pwText.getText());
+                changed = true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Passwords do not match.");
+                alert.setContentText("Password confirmation is not identical to your password.");
+                alert.showAndWait();
+            }
+        }
+        if (pnText.getText() != "") {
+            user.setPhoneNumber(pnText.getText());
+            changed = true;
+        }
+        if (changed) {
+            User.addToDatabase(user.getUsername(), user);
+        }
         Stage toast = new Stage();
         toast.initOwner(_dialogStage);
         toast.initStyle(StageStyle.TRANSPARENT); //???

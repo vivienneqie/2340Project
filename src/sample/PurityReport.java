@@ -15,7 +15,7 @@ public class PurityReport {
     private String dateTime;
     private double virusPPM;
     private double contaminantPPM;
-    //private ReportDatabase rb = new ReportDatabase();
+    private PurityDatabase pb = new PurityDatabase();
 
     /**
      * Purity report constructor
@@ -34,7 +34,7 @@ public class PurityReport {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         dateTime = dateFormat.format(date);
-        //rb.insertEntry(this);
+        pb.insertEntry(this);
     }
 
     /**

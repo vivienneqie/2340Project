@@ -30,8 +30,8 @@ public class ReportDatabase {
     public void insertEntry(Report r) {
         try {
             stmt = conn.createStatement();
-            String sql = "INSERT INTO AVAILABLE (ID,LOCATION,TYPE,CONDITION) " +
-                    "VALUES (" + r.getID() +", '"+ r.getLocation() + "', '"+ r.getType() + "', '"+ r.getCondition() + "');";
+            String sql = "INSERT INTO AVAILABLE (ID,LOCATION,TYPE,CONDITION,DATE) " +
+                    "VALUES ("+ r.getID() +", '"+ r.getLocation() +"', '"+ r.getType() + "', '"+ r.getCondition() +"', '" + r.getDateTime() + "');";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();

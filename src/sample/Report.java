@@ -38,6 +38,23 @@ public class Report {
     }
 
     /**
+     * Report constructor
+     * @param location location of water
+     * @param waterType type of water
+     * @param conditionType condition of water
+     * @param theId the id
+     */
+    public Report(Location location, String waterType, String conditionType, int theId) {
+        this.id = theId;
+        this.location = location;
+        this.waterType = waterType;
+        this.conditionType = conditionType;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        dateTime = dateFormat.format(date);
+    }
+
+    /**
      * Getter method for report ID
      * @return int
      */

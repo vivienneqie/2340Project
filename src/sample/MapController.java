@@ -5,6 +5,8 @@ import com.lynden.gmapsfx.MapComponentInitializedListener;
 
 import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +20,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import jdk.nashorn.api.scripting.JSObject;
 
+import java.io.InputStream;
+import java.io.Reader;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.Clob;
 
 /**
  * Created by b on 10/27/16.
@@ -70,6 +79,8 @@ public class MapController implements Initializable, MapComponentInitializedList
 
         Scene scene = new Scene(bp);
         stage.setScene(scene);
+        //
+        generateReports();
     }
 
 //    private void addFileOptions(Menu file) {
@@ -142,5 +153,41 @@ public class MapController implements Initializable, MapComponentInitializedList
      */
     public Stage getStage() {
         return stage;
+    }
+
+    /**
+     * retrieves all data from the db and creates all reports
+     * @return arrayList of reports
+     */
+    public ArrayList generateReports() {
+        ReportDatabase rb = new ReportDatabase();
+        ArrayList list = new ArrayList<>();
+        ArrayList ret = new ArrayList<>();
+        try {
+            Statement stmt = rb.conn.createStatement();
+            ResultSet rs = stmt.executeQuery( "SELECT ID FROM AVAILABLE;" );
+            while (rs.next() != false) {
+                list.add(rs.getObject("ID"));
+            }
+            for (Object i : list) {
+                String sql = "SELECT * FROM AVAILABLE WHERE ID = ?";
+                PreparedStatement stmt2 = rb.conn.prepareStatement(sql);
+                stmt2.setInt(1, (Integer) i);
+                ResultSet rs2 = stmt2.executeQuery();
+                String loc = (String) rs2.getObject("LOCATION");
+                String type = (String) rs2.getObject("TYPE");
+                String condition = (String) rs2.getObject("CONDITION");
+                double lat = (double) rs2.getObject("LATITUDE");
+                double longi = (double) rs2.getObject("LONGITUDE");
+                Location theLoc = new Location(loc, longi, lat);
+                ret.add(new Report(theLoc, type, condition, (Integer) i));
+            }
+            return ret;
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        return null;
     }
 }

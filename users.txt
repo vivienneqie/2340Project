@@ -3,3 +3,5 @@ blah${"username":"blah","password":"blah","email":"sdflkjsfd@hotmail.com","first
 g${"username":"g","password":"j","email":"d","firstName":"g","lastName":"h","accType":"WORKER"}
 a${"username":"a","password":"a","email":"a","firstName":"a","lastName":"a","accType":"MANAGER"}
 g${"username":"g","password":"g","email":"gh","firstName":"g","lastName":"h","accType":"USER"}
+as1216${"username":"as1216","password":"123abcd","email":"aoweifoaiw@gmail.com","firstName":"Arshiya","lastName":"Singh","accType":"USER"}
+arshi${"id":46477159,"username":"arshi","password":"123abcd","email":"arshiyasingh16@gmail.com","firstName":"Arshiya","lastName":"Singh","accType":"USER"}

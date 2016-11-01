@@ -78,17 +78,15 @@ public class ReportDatabase {
     }
 
     /**
-     * Method to update the user in a report
+     * Method to insert the user in the database
      * @param u User
-     * @param attribute String
      */
-    public void updateUser(User u, String attribute) {
+    public void insertUser(User u) {
         try{
             stmt = conn.createStatement();
-            String attrCaps = attribute.toUpperCase();
-            //find attribute method
-            //String sql = "UPDATE USER set" + attrCaps + " = " + r.whateverMethod() + "where = " + attrCaps + ";";
-            //stmt.executeUpdate(sql);
+            String sql = "INSERT INTO USER (id,username,password,email,firstName,lastName,phoneNumber,homeAddress,accType) " +
+                    "VALUES ("+ u.getID() +", '"+ u.getUsername() +"', '"+ u.getPassword() + "', '"+ u.getEmail() +"', '" + u.getFirstName() + "', '" + u.getLastName() + "', '" + u.getPhoneNumber() + "', '" + u.getHomeAddress() + "', '" + u.getAccType() + "');";
+            stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
         } catch (Exception e) {

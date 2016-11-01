@@ -14,6 +14,7 @@ import static sample.AccountTypes.USER;
  * @author Arshiya
  */
 public class User {
+    private int id;
     private String username;
     private String password;
     private String email;
@@ -41,12 +42,16 @@ public class User {
      */
     public User(String username, String password, String email,
                 String firstName, String lastName, AccountTypes accType) {
+        Random r = new Random();
+        this.id = r.nextInt() * 7 + 11;
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.accType = accType;
+        ReportDatabase rb = new ReportDatabase();
+        rb.insertUser(this);
     }
 
     /**
@@ -74,6 +79,14 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(username, email);
+    }
+
+    /**
+     * Getter function for ID
+     * @return int user id
+     */
+    public int getID() {
+        return id;
     }
 
     /**
@@ -181,11 +194,10 @@ public class User {
     }
 
     /**
-     * Setter function for home address
-     * @param homeAddress User's home address
+     * Getter function for accType
      */
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
+    public AccountTypes getAccType() {
+        return accType;
     }
 
     /**

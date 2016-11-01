@@ -254,6 +254,26 @@ public class MainFXApp extends Application {
         }
     }
 
+    public void goToPurityReports() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("PurityReportsView.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("WATER PURITY REPORTS");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            PurityReportsViewController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+    }
+
     /**
      * Method to go to the map view of water availability
      */

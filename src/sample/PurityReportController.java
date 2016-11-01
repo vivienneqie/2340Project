@@ -83,7 +83,7 @@ public class PurityReportController {
         double contaminantPPM = Double.parseDouble(contaminantText.getText());
         PurityReport report = new PurityReport(location, conditionType, virusPPM, contaminantPPM);
         _dialogStage.close();
-        mainFXApplication.goToReports();
+        mainFXApplication.goToPurityReports();
     }
 
     /**

@@ -16,7 +16,9 @@
     </top>
     <center>
         <TableView fx:id="purityTable" BorderPane.alignment="CENTER">
-        </TableView>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy></TableView>
     </center>
     <bottom>
         <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeButton" text="Home" BorderPane.alignment="CENTER" />

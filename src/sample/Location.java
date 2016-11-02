@@ -46,6 +46,15 @@ public class Location {
         return latitude;
     }
 
+    /**
+     * A setter method to reset coordinates
+     * @param latitude double latitude of location
+     * @param longitude double longitude of location
+     */
+    public void setLatLong(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 
     @Override
     public String toString() {

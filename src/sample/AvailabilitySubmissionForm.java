@@ -23,7 +23,6 @@ public class AvailabilitySubmissionForm {
     @FXML
     private ComboBox condBox;
 
-    //TODO: change this to coordinates from Google Maps for extra cred
     @FXML
     private TextField locationText;
 
@@ -32,6 +31,12 @@ public class AvailabilitySubmissionForm {
 
     @FXML
     private Button submitReport;
+
+    @FXML
+    private TextField latitudeTF;
+
+    @FXML
+    private TextField longitudeTF;
 
     private Stage _dialogStage;
 
@@ -72,17 +77,35 @@ public class AvailabilitySubmissionForm {
     private void handleSubmission() {
         //TODO: handle submission and verify fields here
         String locationName = locationText.getText();
-        Random rand = new Random();
-        int poop = rand.nextInt(20) - 10;
-        double scaling = (double) poop / 100;
-        int pee = rand.nextInt(20) - 10;
-        double scale = (double) pee / 100;
-        Location location = new Location(locationName, 33 + scaling, scale);
-        String waterType = typeBox.getSelectionModel().getSelectedItem().toString();
-        String conditionType = condBox.getSelectionModel().getSelectedItem().toString();
-        Report report = new Report(location, waterType, conditionType);
-        _dialogStage.close();
-        mainFXApplication.goToReports();
+        double longitude;
+        double latitude;
+        if (isValidLatLong()) {
+            longitude = Double.parseDouble(longitudeTF.getText());
+            latitude = Double.parseDouble(latitudeTF.getText());
+            Location location = new Location(locationName, longitude, latitude);
+            String waterType = typeBox.getSelectionModel().getSelectedItem().toString();
+            String conditionType = condBox.getSelectionModel().getSelectedItem().toString();
+            Report report = new Report(location, waterType, conditionType);
+            _dialogStage.close();
+            mainFXApplication.goToReports();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Latitude and/or longitude values were not valid.");
+            alert.setContentText("Please enter a valid set of coordinates.");
+            alert.showAndWait();
+        }
+    }
+
+    public boolean isValidLatLong() {
+        try {
+            double latitude = Double.parseDouble(latitudeTF.getText());
+            double longitude = Double.parseDouble(longitudeTF.getText());
+            return latitude >= -90 && latitude <= 90
+                    && longitude >= -90 && longitude <=90;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     /**

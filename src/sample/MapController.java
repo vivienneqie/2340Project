@@ -138,6 +138,11 @@ public class MapController implements Initializable, MapComponentInitializedList
 
         map = mapView.createMap(options);
 
+        ArrayList<Report> reports = generateReports();
+        for (Report r : reports) {
+            addMarkerToMap(map, r.getLocation());
+        }
+
         Location l = new Location("gatech", 34.38, -84);
         addMarkerToMap(map, l);
     }
@@ -159,7 +164,7 @@ public class MapController implements Initializable, MapComponentInitializedList
      * retrieves all data from the db and creates all reports
      * @return arrayList of reports
      */
-    public ArrayList<Report> generateReports() {
+    public static ArrayList<Report> generateReports() {
         ReportDatabase rb = new ReportDatabase();
         ArrayList list = new ArrayList<>();
         ArrayList<Report> ret = new ArrayList<>();

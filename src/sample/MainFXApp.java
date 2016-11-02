@@ -254,10 +254,13 @@ public class MainFXApp extends Application {
         }
     }
 
-    public void goToPurityReports() {
+    /**
+     * Method to go to the page to history graphs (managers only)
+     */
+    public void goToHistoryGraph() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(sample.MainFXApp.class.getResource("PurityReportsView.fxml"));
+            loader.setLocation(sample.MainFXApp.class.getResource("HistoryGraphView.fxml"));
             BorderPane page = loader.load();
 
             Stage dialogStage = new Stage();
@@ -265,7 +268,7 @@ public class MainFXApp extends Application {
             dialogStage.initOwner(mainScreen);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-            PurityReportsViewController controller = loader.getController();
+            HistoryGraphViewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
             dialogStage.show();
@@ -290,6 +293,26 @@ public class MainFXApp extends Application {
 //            dialogStage.setScene(bp.getScene());
 //        }
         mapStage.show();
+    }
+
+    public void goToPurityReports() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(sample.MainFXApp.class.getResource("PurityReportsView.fxml"));
+            BorderPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("WATER PURITY REPORTS");
+            dialogStage.initOwner(mainScreen);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            PurityReportsViewController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            dialogStage.show();
+        } catch (IOException e) {
+            System.out.println("error");
+        }
     }
 
     /**

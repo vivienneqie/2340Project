@@ -97,15 +97,30 @@ public class HomeController {
         mainFXAppApplication.goToEditProfile();
     }
 
+    /**
+     * Method to handle actions when the map button is pressed
+     */
     @FXML
     private void handleMapView() {
         _dialogStage.close();
         mainFXAppApplication.goToMapView();
     }
 
+    /**
+     * Method to handle actions when the purity report button is pressed
+     */
     @FXML
     private void handlePurityReportButton() {
         _dialogStage.close();
         mainFXAppApplication.goToPuritySubmission();
+    }
+
+    /**
+     * Method to handle actions when the history graph button is pressed
+     */
+    @FXML
+    private void handleHistoryGraph() {
+        _dialogStage.close();
+        mainFXAppApplication.goToHistoryGraph();
     }
 }

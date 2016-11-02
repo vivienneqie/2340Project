@@ -17,6 +17,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import jdk.nashorn.api.scripting.JSObject;
 
@@ -39,7 +40,6 @@ public class MapController implements Initializable, MapComponentInitializedList
     private MainFXApp app;
     private Stage stage;
 
-    //Remove this after scenebuilding
     private BorderPane bp;
 
     /**
@@ -83,16 +83,15 @@ public class MapController implements Initializable, MapComponentInitializedList
         generateReports();
     }
 
-//    private void addFileOptions(Menu file) {
-//        MenuItem close = new MenuItem("Close");
-//        close.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                stage.close();
-//                app.goToHome();
-//            }
-//        });
-//    }
+    private void addFileOptions(Menu file) {
+        MenuItem close = new MenuItem("Close");
+        close.setOnAction(event ->  {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Close");
+                stage.close();
+                app.goToHome();
+        });
+    }
 
     /**
      * Add marker to map
@@ -148,8 +147,6 @@ public class MapController implements Initializable, MapComponentInitializedList
             addMarkerToMap(map, r);
         }
 
-//        Location l = new Location("gatech", 34.38, -84);
-//        addMarkerToMap(map, l);
     }
 
     @Override

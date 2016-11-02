@@ -97,12 +97,13 @@ public class MapController implements Initializable, MapComponentInitializedList
     /**
      * Add marker to map
      *
-     * @param location location of marker
+     * @param report corresponding report
      */
-    private void addMarkerToMap(GoogleMap map, Location location) {
+    private void addMarkerToMap(GoogleMap map, Report report) {
+        Location location = report.getLocation();
         double longitude = location.getLongitude();
         double latitude = location.getLatitude();
-        LatLong position = new LatLong(longitude, latitude);
+        LatLong position = new LatLong(latitude, longitude);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(position);
         markerOptions.visible(Boolean.TRUE);
@@ -114,9 +115,13 @@ public class MapController implements Initializable, MapComponentInitializedList
                 UIEventType.click,
                 obj -> {
                     InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
-                    InfoWindow window = new InfoWindow(infoWindowOptions);
-                    window.open(map, marker);
+                    infoWindowOptions.content("<h2>" + location.getName() + "</h2>"
+                            + "Type: " + report.getType() + "<br>"
+                            + "Condition: " + report.getCondition() + "<br>");
+                    InfoWindow infoWindow = new InfoWindow(infoWindowOptions);
+                    infoWindow.open(map, marker);
                 });
+
 
         map.addMarker(marker);
     }
@@ -140,11 +145,11 @@ public class MapController implements Initializable, MapComponentInitializedList
 
         ArrayList<Report> reports = generateReports();
         for (Report r : reports) {
-            addMarkerToMap(map, r.getLocation());
+            addMarkerToMap(map, r);
         }
 
-        Location l = new Location("gatech", 34.38, -84);
-        addMarkerToMap(map, l);
+//        Location l = new Location("gatech", 34.38, -84);
+//        addMarkerToMap(map, l);
     }
 
     @Override

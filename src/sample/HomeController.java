@@ -25,7 +25,10 @@ public class HomeController {
     private Button viewMap;
 
     @FXML
-    private Button purityReportButton;
+    private Button reportPurityButton;
+
+    @FXML
+    private Button historyGraphButton;
 
     private MainFXApp mainFXAppApplication;
 
@@ -51,8 +54,21 @@ public class HomeController {
      */
     @FXML
     private void initialize() {
-        //TODO:set up more buttons if the user logging in is a worker or manager
+        User user = LoginController.getActiveUser();
+        reportPurityButton.setVisible(false);
+        viewPurityReports.setVisible(false);
+        historyGraphButton.setVisible(false);
 
+        if (user.getAccType() == AccountTypes.WORKER) {
+            reportPurityButton.setVisible(true);
+            viewPurityReports.setVisible(true);
+        }
+
+        if (user.getAccType() == AccountTypes.MANAGER) {
+            reportPurityButton.setVisible(true);
+            viewPurityReports.setVisible(true);
+            historyGraphButton.setVisible(true);
+        }
     }
 
     /**

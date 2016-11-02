@@ -47,6 +47,10 @@ public class EditProfileController {
     @FXML
     private TextField pnText;
 
+    private User user;
+
+    private ReportDatabase rb;
+
     private Stage _dialogStage;
 
     private MainFXApp mainFXApplication;
@@ -70,7 +74,8 @@ public class EditProfileController {
      */
     @FXML
     private void initialize() {
-
+        user = LoginController.getActiveUser();
+        rb = new ReportDatabase();
     }
 
     /**
@@ -79,29 +84,32 @@ public class EditProfileController {
     @FXML
     private void handleSave() {
         //TODO: figure out how to find out who the user is when using the application
-        LoginController lg = new LoginController();
-        User user = lg.getActiveUser();
         boolean changed = false;
         //ERROR: when setting anything, it returns a null pointer exception
         if (!(fnText.getText().trim().isEmpty())) {
             user.setFirstName(fnText.getText());
+            rb.updateUserFirst(user);
             changed = true;
         }
         if (!(lnText.getText().trim().isEmpty())) {
             user.setLastName(lnText.getText());
+            rb.updateUserLast(user);
             changed = true;
         }
         if (!(emailText.getText().trim().isEmpty())) {
             user.setEmail(emailText.getText());
+            rb.updateUserEmail(user);
             changed = true;
         }
         if (!(unText.getText().trim().isEmpty())) {
             user.setUsername(unText.getText());
+            rb.updateUserName(user);
             changed = true;
         }
         if (!(pwText.getText().trim().isEmpty()) || !(pwcText.getText().trim().isEmpty())) {
             if (pwText.getText().equals(pwcText.getText())) {
                 user.setPassword(pwText.getText());
+                rb.updateUserPass(user);
                 changed = true;
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -113,6 +121,7 @@ public class EditProfileController {
         }
         if (!(pnText.getText().trim().isEmpty())) {
             user.setPhoneNumber(pnText.getText());
+            rb.updateUserPhone(user);
             changed = true;
         }
         if (changed) {

@@ -23,7 +23,7 @@ public class User {
     private String phoneNumber;
     private String homeAddress;
     private AccountTypes accType;
-    private ReportDatabase rb;
+    private static ReportDatabase rb;
     private static Map<String, User> userDB = new HashMap<>();
 
     /**
@@ -51,7 +51,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.accType = accType;
-        this.rb = new ReportDatabase();
+        rb = new ReportDatabase();
         rb.insertUser(this);
     }
 
@@ -104,7 +104,7 @@ public class User {
      */
     public void setUsername(String username) {
         this.username = username;
-        rb.updateUserName(this);
+        //rb.updateUserName(this);
     }
 
     /**
@@ -121,7 +121,7 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
-        rb.updateUserPass(this);
+        //rb.updateUserPass(this);
     }
 
     /**
@@ -138,7 +138,7 @@ public class User {
      */
     public void setEmail(String email) {
         this.email = email;
-        rb.updateUserEmail(this);
+        //rb.updateUserEmail(this);
     }
 
     /**
@@ -155,7 +155,7 @@ public class User {
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-        rb.updateUserFirst(this);
+        //rb.updateUserFirst(this);
     }
 
     /**
@@ -172,7 +172,7 @@ public class User {
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        rb.updateUserLast(this);
+        //rb.updateUserLast(this);
     }
 
     /**
@@ -189,7 +189,7 @@ public class User {
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-        rb.updateUserPhone(this);
+        //rb.updateUserPhone(this);
     }
 
     /**
@@ -206,7 +206,7 @@ public class User {
      */
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
-        rb.updateUserHome(this);
+        //rb.updateUserHome(this);
     }
 
     /**

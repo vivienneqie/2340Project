@@ -28,7 +28,7 @@ public class LoginController {
 
     private Stage _dialogStage;
 
-    private User activeuser;
+    private static User activeuser;
 
     /** flag to signal whether dialog was closed normally */
     private boolean _okClicked = false;
@@ -132,7 +132,7 @@ public class LoginController {
      * returns the active user
      * @return the user currently logged in
      */
-    public User getActiveUser() {
+    public static User getActiveUser() {
         return activeuser;
     }
 }

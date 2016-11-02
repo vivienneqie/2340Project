@@ -103,7 +103,7 @@ public class ReportDatabase {
     public void updateUserName(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set username = " + u.getUsername() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET username = '" + u.getUsername() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -120,7 +120,7 @@ public class ReportDatabase {
     public void updateUserPass(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set password = " + u.getPassword() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET password = '" + u.getPassword() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -137,7 +137,7 @@ public class ReportDatabase {
     public void updateUserEmail(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set email = " + u.getEmail() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET email = '" + u.getEmail() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -154,7 +154,7 @@ public class ReportDatabase {
     public void updateUserFirst(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set firstName = " + u.getFirstName() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET firstName = '" + u.getFirstName() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -171,7 +171,7 @@ public class ReportDatabase {
     public void updateUserLast(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set lastName = " + u.getLastName() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET lastName = '" + u.getLastName() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -188,7 +188,7 @@ public class ReportDatabase {
     public void updateUserPhone(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set phoneNumber = " + u.getPhoneNumber() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET phoneNumber = '" + u.getPhoneNumber() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -205,7 +205,7 @@ public class ReportDatabase {
     public void updateUserHome(User u) {
         try{
             stmt = conn.createStatement();
-            String sql = "UPDATE USER set homeAddress = " + u.getHomeAddress() + "where ID=" + u.getID() + ";";
+            String sql = "UPDATE USER SET homeAddress = '" + u.getHomeAddress() + "' WHERE ID = " + u.getID() + ";";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();

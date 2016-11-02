@@ -3,6 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -25,6 +26,12 @@ public class HistoryGraphViewController {
 
     @FXML
     private LineChart graph;
+
+    @FXML
+    private RadioButton virusRadio;
+
+    @FXML
+    private RadioButton contaminantRadio;
 
     private MainFXApp mainFXAppApplication;
 

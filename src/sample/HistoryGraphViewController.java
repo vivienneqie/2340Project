@@ -24,9 +24,6 @@ public class HistoryGraphViewController {
     private TextField locationText;
 
     @FXML
-    private TextField ppmText;
-
-    @FXML
     private TextField yearText;
 
     @FXML
@@ -81,25 +78,26 @@ public class HistoryGraphViewController {
     public void handleSearch() {
         //TODO: when search button is pressed, display report history on graph
         String locText = locationText.getText();
-        String virText = ppmText.getText();
-        //double virNum = Double.parseDouble(virText);
         String yrText = yearText.getText();
         ReportDatabase rb = new ReportDatabase();
         ArrayList ppmList = new ArrayList<>();
         ArrayList monthList = new ArrayList<>();
-        ArrayList ppm2List = new ArrayList<>();
+        //ArrayList ppm2List = new ArrayList<>();
         String sql = "SELECT * FROM PURITY WHERE LOCATION = ?";
         int i = 0;
         try {
             PreparedStatement stmt = rb.conn.prepareStatement(sql);
             stmt.setString(1, locText);
-           // stmt.setDouble(2, virNum);
             ResultSet rs = stmt.executeQuery();
             while (rs.next() != false) {
                 String date = (String) rs.getObject("DATE");
                 if (date.substring(0,4).equals(yrText)) {
-                    ppmList.add(rs.getObject("VIRUS"));
-                    ppm2List.add(rs.getObject("CONTAMINANT"));
+                    if (virusRadio.isSelected()) {
+                        ppmList.add(rs.getObject("VIRUS"));
+                        System.out.println(rs.getObject("VIRUS"));
+                    } else {
+                        ppmList.add(rs.getObject("CONTAMINANT"));
+                    }
                     monthList.add(date.substring(5,7));
                     i++;
                 }
@@ -110,12 +108,6 @@ public class HistoryGraphViewController {
                 series.getData().add(new XYChart.Data<>(monthList.get(a), ppmList.get(a)));
             }
             graph.getData().add(series);
-//            XYChart.Series series2 = new XYChart.Series();
-//            series2.setName("Contaminants");
-//            for (int a = 0; a < i; a++) {
-//                series2.getData().add(new XYChart.Data<>(monthList.get(a), ppm2List.get(a)));
-//            }
-//            graph.getData().add(series2);
         } catch (SQLException e) {
             e.printStackTrace();
         }

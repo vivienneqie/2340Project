@@ -7,11 +7,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HistoryGraphViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HistoryGraphViewController">
    <top>
       <Label text="History Graph" BorderPane.alignment="CENTER">
          <font>
@@ -33,9 +34,11 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="locationText" promptText="enter location" />
-            <TextField fx:id="ppmText" promptText="enter either virus or contaminant PPM" />
-            <RadioButton fx:id="virusRadio" mnemonicParsing="false" text="virus" />
-            <RadioButton fx:id="contaminantRadio" mnemonicParsing="false" text="contaminant" />
+            <RadioButton fx:id="virusRadio" mnemonicParsing="false" selected="true" text="virus">
+               <toggleGroup>
+                  <ToggleGroup fx:id="columnSelect" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="contaminantRadio" mnemonicParsing="false" text="contaminant" toggleGroup="$columnSelect" />
             <TextField fx:id="yearText" promptText="enter year" />
             <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
              <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />

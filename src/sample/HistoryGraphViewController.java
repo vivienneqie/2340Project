@@ -94,7 +94,6 @@ public class HistoryGraphViewController {
                 if (date.substring(0,4).equals(yrText)) {
                     if (virusRadio.isSelected()) {
                         ppmList.add(rs.getObject("VIRUS"));
-                        System.out.println(rs.getObject("VIRUS"));
                     } else {
                         ppmList.add(rs.getObject("CONTAMINANT"));
                     }
@@ -103,7 +102,12 @@ public class HistoryGraphViewController {
                 }
             }
             XYChart.Series series = new XYChart.Series();
-            series.setName("Virus");
+            if (virusRadio.isSelected()) {
+                series.setName("VIRUS");
+            } else {
+                series.setName("CONTAMINANT");
+            }
+
             for (int a = 0; a < i; a++) {
                 series.getData().add(new XYChart.Data<>(monthList.get(a), ppmList.get(a)));
             }

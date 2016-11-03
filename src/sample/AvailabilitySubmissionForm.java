@@ -101,7 +101,7 @@ public class AvailabilitySubmissionForm {
      * Method to check whether coordinates entered are valid
      * @return boolean whether coordinates are valid
      */
-    public boolean isValidLatLong() {
+    private boolean isValidLatLong() {
         try {
             double latitude = Double.parseDouble(latitudeTF.getText());
             double longitude = Double.parseDouble(longitudeTF.getText());

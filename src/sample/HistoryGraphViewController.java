@@ -83,7 +83,7 @@ public class HistoryGraphViewController {
         ArrayList ppmList = new ArrayList<>();
         ArrayList monthList = new ArrayList<>();
         //ArrayList ppm2List = new ArrayList<>();
-        String sql = "SELECT * FROM PURITY WHERE LOCATION = ?";
+        String sql = "SELECT * FROM PURITY WHERE LOCATION = ? ORDER BY DATE ASC";
         int i = 0;
         try {
             PreparedStatement stmt = rb.conn.prepareStatement(sql);

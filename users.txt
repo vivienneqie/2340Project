@@ -6,3 +6,4 @@ g${"username":"g","password":"g","email":"gh","firstName":"g","lastName":"h","ac
 as1216${"username":"as1216","password":"123abcd","email":"aoweifoaiw@gmail.com","firstName":"Arshiya","lastName":"Singh","accType":"USER"}
 arshi${"id":46477159,"username":"arshi","password":"123abcd","email":"arshiyasingh16@gmail.com","firstName":"Arshiya","lastName":"Singh","accType":"USER"}
 dankmemes${"id":-386785353,"username":"dankmemes","password":"123abcd","email":"dankmemes@gmail.com","firstName":"Dank","lastName":"Memes","accType":"WORKER"}
+as${"id":316853579,"username":"as","password":"as","email":"as","firstName":"as","lastName":"as","accType":"MANAGER"}

@@ -48,8 +48,6 @@ public class RegisterController {
     @FXML
     private Button register;
 
-    private Gson gson;
-
     private static User newUser;
 
     private static File file = new File("users.txt");
@@ -131,7 +129,7 @@ public class RegisterController {
                 newUser = new User(unText.getText(), pwText.getText(),
                         emailText.getText(), fnText.getText(), lnText.getText(), accountType);
                 newUser.addToDatabase(newUser.getUsername(), newUser);
-                gson = new Gson();
+                Gson gson = new Gson();
                 String jsonString = gson.toJson(newUser);
                 try {
                     //Writes data to a .txt file

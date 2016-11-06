@@ -12,13 +12,12 @@ public class Administrator extends User {
     private String lastName;
     private String phoneNumber;
     private String homeAddress;
-    private AccountTypes accType;
 
     /**
      * Empty constructor with default account type
      */
     public Administrator() {
-        accType = ADMIN;
+        AccountTypes accType = ADMIN;
     }
 
     /**

@@ -23,7 +23,6 @@ public class User {
     private String phoneNumber;
     private String homeAddress;
     private AccountTypes accType;
-    private static ReportDatabase rb;
     private static Map<String, User> userDB = new HashMap<>();
 
     /**
@@ -51,7 +50,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.accType = accType;
-        rb = new ReportDatabase();
+        ReportDatabase rb = new ReportDatabase();
         rb.insertUser(this);
     }
 

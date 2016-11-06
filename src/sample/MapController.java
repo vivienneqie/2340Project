@@ -36,11 +36,8 @@ import java.sql.Clob;
  */
 public class MapController implements Initializable, MapComponentInitializedListener {
     private GoogleMapView mapView;
-    private GoogleMap map;
     private MainFXApp app;
     private Stage stage;
-
-    private BorderPane bp;
 
     /**
      * Constructor for map controller
@@ -60,7 +57,7 @@ public class MapController implements Initializable, MapComponentInitializedList
     private void setUpMapView(Stage stage) {
         mapView = new GoogleMapView();
         mapView.addMapInializedListener(this);
-        bp = new BorderPane();
+        BorderPane bp = new BorderPane();
         MenuBar mb = new MenuBar();
         Menu file = new Menu("File");
         Menu edit = new Menu("Edit");
@@ -140,7 +137,7 @@ public class MapController implements Initializable, MapComponentInitializedList
                 .zoomControl(false)
                 .mapType(MapTypeIdEnum.ROADMAP);
 
-        map = mapView.createMap(options);
+        GoogleMap map = mapView.createMap(options);
 
         ArrayList<Report> reports = generateReports();
         for (Report r : reports != null ? reports : null) {

@@ -18,8 +18,6 @@ import java.io.IOException;
  */
 public class MainFXApp extends Application {
 
-    private BorderPane rootLayout;
-
     private Stage mainScreen;
 
     /**
@@ -71,7 +69,7 @@ public class MainFXApp extends Application {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(sample.MainFXApp.class.getResource("WelcomeScreen.fxml"));
-            rootLayout = loader.load();
+            BorderPane rootLayout = loader.load();
             Stage dialogStage = new Stage();
 
             // Give the controller access to the main app.

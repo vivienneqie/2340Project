@@ -42,7 +42,7 @@ public class PurityReportController {
     private MainFXApp mainFXApplication;
 
     /**
-     * Method to set the main applcation
+     * Method to set the main application
      * @param mainFXApp MainFXApp
      */
     public void setMainApp(MainFXApp mainFXApp) { mainFXApplication = mainFXApp; }

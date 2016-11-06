@@ -86,7 +86,7 @@ public class LoginController {
     }
 
     /**
-     * Method to handle actions when the cancel button is presed
+     * Method to handle actions when the cancel button is pressed
      */
     @FXML
     private void handleCancel() {

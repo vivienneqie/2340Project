@@ -69,7 +69,7 @@ public class AvailabilityReportsController {
      */
     @FXML
     public ArrayList<ArrayList> displayAll(ReportDatabase rb) {
-        ArrayList<ArrayList> list = new ArrayList<ArrayList>();
+        ArrayList<ArrayList> list = new ArrayList<>();
         try {
             Statement stmt = rb.conn.createStatement();
             ObservableList<ObservableList> data = FXCollections.observableArrayList();

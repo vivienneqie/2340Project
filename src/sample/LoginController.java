@@ -43,13 +43,6 @@ public class LoginController {
         mainFXAppApplication = mainFXApp;}
 
     /**
-     * Method to initialize the view
-     */
-    @FXML
-    private void initialize() {
-    }
-
-    /**
      * Method to set the dialog stage
      * @param dialogStage Stage
      */

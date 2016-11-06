@@ -55,14 +55,6 @@ public class HistoryGraphViewController {
     }
 
     /**
-     * Method to initialize the view
-     */
-    @FXML
-    private void initialize() {
-
-    }
-
-    /**
      * Method to handle actions when the logout button is pressed
      */
     @FXML
@@ -89,7 +81,7 @@ public class HistoryGraphViewController {
             PreparedStatement stmt = rb.conn.prepareStatement(sql);
             stmt.setString(1, locText);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next() != false) {
+            while (rs.next()) {
                 String date = (String) rs.getObject("DATE");
                 if (date.substring(0,4).equals(yrText)) {
                     if (virusRadio.isSelected()) {

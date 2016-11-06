@@ -227,7 +227,7 @@ public class User {
 
     /**
      * Getter function for the database of users
-     * @return
+     * @return user database
      */
     public static Map<String, User> getUserDB() {
         return userDB;
@@ -236,7 +236,7 @@ public class User {
     /**
      *
      * @param file The file that contains user data
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException file not found exception
      */
     public static void populateUserDB(File file) throws FileNotFoundException {
         Scanner scan = new Scanner(file);

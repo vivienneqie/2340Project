@@ -143,7 +143,7 @@ public class MapController implements Initializable, MapComponentInitializedList
         map = mapView.createMap(options);
 
         ArrayList<Report> reports = generateReports();
-        for (Report r : reports) {
+        for (Report r : reports != null ? reports : null) {
             addMarkerToMap(map, r);
         }
 
@@ -173,7 +173,7 @@ public class MapController implements Initializable, MapComponentInitializedList
         try {
             Statement stmt = rb.conn.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT ID FROM AVAILABLE;" );
-            while (rs.next() != false) {
+            while (rs.next()) {
                 list.add(rs.getObject("ID"));
             }
             for (Object i : list) {

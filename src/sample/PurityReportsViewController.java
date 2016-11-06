@@ -71,7 +71,7 @@ public class PurityReportsViewController {
      */
     @FXML
     public ArrayList<ArrayList> displayAll(PurityDatabase pb) {
-        ArrayList<ArrayList> list = new ArrayList<ArrayList>();
+        ArrayList<ArrayList> list = new ArrayList<>();
         try {
             Statement stmt = pb.conn.createStatement();
             ObservableList<ObservableList> data = FXCollections.observableArrayList();

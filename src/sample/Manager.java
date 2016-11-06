@@ -172,4 +172,12 @@ public class Manager extends User {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
+
+    /**
+     * Getter method for account type
+     * @return AccountTypes
+     */
+    public AccountTypes getAccountType() {
+        return accType;
+    }
 }

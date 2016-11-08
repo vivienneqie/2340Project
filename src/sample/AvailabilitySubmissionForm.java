@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 
-import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Archie on 10/12/2016.

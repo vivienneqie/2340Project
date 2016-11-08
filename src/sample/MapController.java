@@ -5,11 +5,6 @@ import com.lynden.gmapsfx.MapComponentInitializedListener;
 
 import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,17 +14,12 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import jdk.nashorn.api.scripting.JSObject;
-
-import java.io.InputStream;
-import java.io.Reader;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
-import java.sql.Clob;
 
 /**
  * Created by b on 10/27/16.

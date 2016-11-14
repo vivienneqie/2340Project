@@ -60,7 +60,7 @@ public class PurityReportController {
      */
     @FXML
     private void initialize() {
-        String[] waterTypes = {"Safe", "Treatable", "Unsafe"};
+        String[] waterTypes = {"Potable", "Treatable - Muddy", "Treatable - Clear", "Waste"};
         ObservableList typeList = FXCollections.observableArrayList(waterTypes);
         condBox.setItems(typeList);
     }

@@ -11,4 +11,15 @@ public class LocationTest {
         Location a1 = new Location("A place", 100, 100);
         Assert.assertNotNull(new Location("A place", 111, 111));
     }
+    @Test
+    public void createWithSameCoords() {
+        Location b1 = new Location("aaa", 9, 9);
+        Assert.assertNotNull(new Location("bbb", 9, 9));
+    }
+    @Test
+    public void toStringName() {
+        String name = "Antarctica";
+        Location c1 = new Location(name, 999, 999);
+        Assert.assertEquals(name, c1.toString());
+    }
 }

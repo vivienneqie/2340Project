@@ -15,7 +15,7 @@ public class UserTest {
         String email2 = "vqie3@gatech.edu";
 
         User user1 = new User(username1, "password", email1, "Vivienne", "Qie");
-        User user2 = new User(username1, "pass", email1, "Viv", "Q");
+        User user2 = new User(username1, "pass", email1, "V", "Q");
 
         User user = null;
 

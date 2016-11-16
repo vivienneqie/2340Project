@@ -14,16 +14,25 @@ public class UserTest {
         String email1 = "qievi@gatech.edu";
         String email2 = "vqie3@gatech.edu";
 
-        User user1 = new User(username1, "password", email1, "Vivienne", "Qie", AccountTypes.USER);
-        User user2 = new User(username1, "pass", email1, "Viv", "Q", AccountTypes.ADMIN);
+        User user1 = new User(username1, "password", email1, "Vivienne", "Qie");
+        User user2 = new User(username1, "pass", email1, "Viv", "Q");
 
-        // Testing 2 users with same username and email, but different password, first name, last name, and account type
+        User user = null;
+
+        // Testing null user
+        Assert.assertFalse(user1.equals(user));
+
+        // Testing class equality
+        Assert.assertTrue(user1.getClass() == user2.getClass());
+
+        // Testing 2 users with same username and email
         Assert.assertTrue(user1.equals(user2));
 
-        User user3 = new User(username2, "password", email2, "Vivienne", "Qie", AccountTypes.USER);
+        User user3 = new User(username2, "password", email2, "Vivienne", "Qie");
 
-        // Testing 2 users with different username and email, but same password, first name, last name, and account type
+        // Testing 2 users with different username and email
         Assert.assertFalse(user1.equals(user3));
+
     }
 
 }

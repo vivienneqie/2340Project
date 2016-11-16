@@ -33,6 +33,23 @@ public class User {
     }
 
     /**
+     * Constructor with no account type
+     * @param username User's user name
+     * @param password User's password
+     * @param email User's email address
+     * @param firstName User's first name
+     * @param lastName User's last name
+     */
+    public User(String username, String password, String email,
+                String firstName, String lastName) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    /**
      * User constructor
      * @param username User's user name
      * @param password User's password

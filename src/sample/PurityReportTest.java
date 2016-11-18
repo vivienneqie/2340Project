@@ -4,13 +4,12 @@ import java.sql.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Archie on 11/13/2016.
  */
+@SuppressWarnings("DefaultFileTemplate")
 public class PurityReportTest {
-    PurityDatabase db = new PurityDatabase();
+    private PurityDatabase db = new PurityDatabase();
 
     @Before
     public void numberOfEntries() throws Exception {
@@ -24,7 +23,6 @@ public class PurityReportTest {
             }
             System.out.println("The number of entries in this table are " + i);
         } catch (SQLException e) {
-            /** on createStatement, executeQuery **/
             System.out.println("Your database connection might be closed. Try opening it again");
             e.printStackTrace();
         }
